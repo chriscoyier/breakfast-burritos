@@ -1,0 +1,67 @@
+---
+const { restaurant, address, item, stars, images, content } = Astro.props;
+---
+
+<div class="card">
+	<header>
+		<h2>{restaurant}</h2>
+		<address>{address}</address>
+	</header>
+	<div class="rating">
+		{stars}
+	</div>
+	<div class="image">
+		<span class="item-name">{item}</span>
+		<img src={`/images/${images[0]}`} />
+	</div>
+	<div class="content">
+		{content}
+	</div>
+</div>
+
+<style lang="scss">
+	.card {
+		background: white;
+		box-shadow: 4px 4px 4px rgba(black, 0.2);
+
+		img {
+			max-width: 100%;
+			display: block;
+		}
+
+		header {
+			background-color: hsl(var(--yellow));
+			padding: 2rem;
+
+			h2 {
+				font-weight: 900;
+			}
+
+			address {
+				font-weight: 300;
+				font-size: 1rem;
+				font-style: normal;
+			}
+		}
+	}
+
+	.rating {
+		background: hsl(var(--yellow) / 0.25);
+		padding: 1rem 2rem;
+	}
+
+	.image {
+		position: relative;
+		padding: 1rem;
+	}
+	.item-name {
+		position: absolute;
+		bottom: 1rem;
+		left: 1rem;
+		color: white;
+	}
+
+	.content {
+		padding: 1rem;
+	}
+</style>

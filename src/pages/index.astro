@@ -1,0 +1,29 @@
+---
+import Layout from '../layout/Layout.astro';
+import Card from '../components/Card.astro';
+const data = Astro.fetchContent('../content/*.md');
+---
+
+<Layout>
+	<div class="grid">
+		{data.map((post) => (
+			<Card
+				restaurant={post.restaurant}
+				address={post.address}
+				item={post.item}
+				stars={post.stars}
+				images={post.images}
+				content={post.content.html}
+			/>
+		))}
+	</div>
+</Layout>
+
+<style lang="scss">
+	.grid {
+		padding: 2rem;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 1rem;
+	}
+</style>
