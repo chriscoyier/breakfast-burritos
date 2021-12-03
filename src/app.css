@@ -1,3 +1,20 @@
 * {
 	box-sizing: border-box;
 }
+
+html {
+	--yellow: 47 100% 50%;
+	background: 
+		radial-gradient(
+			circle at top left, 
+			white, 
+			hsl(var(--yellow) / 0.5) 400px
+		), 
+		url(/images/noise.png);
+	background-size: cover, 400px;
+	height: 100vh;
+}
+
+body {
+	margin: 0;
+}
