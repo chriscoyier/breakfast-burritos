@@ -1,21 +1,26 @@
 ---
 const { restaurant, address, item, stars, images, content } = Astro.props;
-const URL_PREFIX = import.meta.env.LOCAL_DEV
-	? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800/'
+const LOCAL_DEV = import.meta.env.LOCAL_DEV;
+const URL_PREFIX = LOCAL_DEV
+	? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800'
 	: '';
 ---
 
 <div class="card">
 	<header>
+		{LOCAL_DEV}
 		<h2>{restaurant}</h2>
 		<address>{address}</address>
 	</header>
 	<div class="rating">
-		{stars}
+		<span class="stars">★★★★★</span>
+		<span class="star-text">{stars} / 5 Stars</span>
 	</div>
 	<div class="image">
 		<span class="item-name">{item}</span>
 		<img src={`${URL_PREFIX}/images/${images[0]}`} />
+		<img src={`${URL_PREFIX}/images/${images[1]}`} />
+		<img src={`${URL_PREFIX}/images/${images[2]}`} />
 	</div>
 	<div class="content">
 		{content}
@@ -56,6 +61,13 @@ const URL_PREFIX = import.meta.env.LOCAL_DEV
 	.image {
 		position: relative;
 		padding: 1rem;
+		display: grid;
+		gap: 0.5rem;
+		grid-template-columns: 1fr 1fr;
+
+		img:nth-of-type(1) {
+			grid-column: 1 / -1;
+		}
 	}
 	.item-name {
 		position: absolute;
