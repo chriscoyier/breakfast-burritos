@@ -4,7 +4,7 @@ import Card from '../components/Card.astro';
 const data = Astro.fetchContent('../content/*.md');
 ---
 
-<Layout>
+<Layout title="Breakfast Burritos in Bend, Reviewed.">
 	<div class="grid">
 		{data.map((post) => (
 			<Card

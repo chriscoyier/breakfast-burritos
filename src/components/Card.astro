@@ -1,5 +1,8 @@
 ---
 const { restaurant, address, item, stars, images, content } = Astro.props;
+const URL_PREFIX = import.meta.env.LOCAL_DEV
+	? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800/'
+	: '';
 ---
 
 <div class="card">
@@ -12,7 +15,7 @@ const { restaurant, address, item, stars, images, content } = Astro.props;
 	</div>
 	<div class="image">
 		<span class="item-name">{item}</span>
-		<img src={`/images/${images[0]}`} />
+		<img src={`${URL_PREFIX}/images/${images[0]}`} />
 	</div>
 	<div class="content">
 		{content}
