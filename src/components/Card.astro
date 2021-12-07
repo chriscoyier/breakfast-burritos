@@ -9,7 +9,8 @@ const URL_PREFIX = LOCAL_DEV
 <div class="card">
 	<header>
 		{LOCAL_DEV}
-		<h2>{restaurant}</h2>
+		<h2>{restaurant} <span class="item-name">{item}</span></h2>
+
 		<address>{address}</address>
 	</header>
 	<div class="rating">
@@ -17,7 +18,6 @@ const URL_PREFIX = LOCAL_DEV
 		<span class="star-text">{stars} / 5 Stars</span>
 	</div>
 	<div class="image">
-		<span class="item-name">{item}</span>
 		<img src={`${URL_PREFIX}/images/${images[0]}`} />
 		<img src={`${URL_PREFIX}/images/${images[1]}`} />
 		<img src={`${URL_PREFIX}/images/${images[2]}`} />
@@ -29,8 +29,9 @@ const URL_PREFIX = LOCAL_DEV
 
 <style lang="scss">
 	.card {
-		background: white;
 		box-shadow: 4px 4px 4px rgba(black, 0.2);
+		display: flex;
+		flex-direction: column;
 
 		img {
 			max-width: 100%;
@@ -38,7 +39,7 @@ const URL_PREFIX = LOCAL_DEV
 		}
 
 		header {
-			background-color: hsl(var(--yellow));
+			background-color: hsl(var(--yellow) / 0.9);
 			padding: 2rem;
 
 			h2 {
@@ -59,6 +60,7 @@ const URL_PREFIX = LOCAL_DEV
 	}
 
 	.image {
+		background: white;
 		position: relative;
 		padding: 1rem;
 		display: grid;
@@ -70,13 +72,19 @@ const URL_PREFIX = LOCAL_DEV
 		}
 	}
 	.item-name {
-		position: absolute;
-		bottom: 1rem;
-		left: 1rem;
-		color: white;
+		color: #bd4f00;
+		font-weight: 600;
+		&::before {
+			content: '(';
+		}
+		&::after {
+			content: ')';
+		}
 	}
 
 	.content {
+		background: white;
 		padding: 1rem;
+		flex: 1;
 	}
 </style>
