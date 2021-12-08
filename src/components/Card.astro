@@ -1,26 +1,34 @@
 ---
 const { restaurant, address, item, stars, images, content } = Astro.props;
-const LOCAL_DEV = import.meta.env.LOCAL_DEV;
-const URL_PREFIX = LOCAL_DEV
-	? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800'
-	: '';
+
+let star_emojis;
+for (let i = 0; i < stars; i++) {
+	star_emojis += `★`;
+}
+
+const PUBLIC_SITE = import.meta.env.PUBLIC_SITE;
+console.log(PUBLIC_SITE);
+const URL_PREFIX =
+	PUBLIC_SITE === 'false'
+		? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800'
+		: '';
+const SITE_URL = 'https://breakfast-burritos.chriscoyier.net';
 ---
 
 <div class="card">
 	<header>
-		{LOCAL_DEV}
 		<h2>{restaurant} <span class="item-name">{item}</span></h2>
 
 		<address>{address}</address>
 	</header>
 	<div class="rating">
-		<span class="stars">★★★★★</span>
+		<span class="stars">{star_emojis}</span>
 		<span class="star-text">{stars} / 5 Stars</span>
 	</div>
 	<div class="image">
-		<img src={`${URL_PREFIX}/images/${images[0]}`} />
-		<img src={`${URL_PREFIX}/images/${images[1]}`} />
-		<img src={`${URL_PREFIX}/images/${images[2]}`} />
+		<img src={`${URL_PREFIX}/${SITE_URL}/images/${images[0]}`} />
+		<img src={`${URL_PREFIX}/${SITE_URL}/images/${images[1]}`} />
+		<img src={`${URL_PREFIX}/${SITE_URL}/images/${images[2]}`} />
 	</div>
 	<div class="content">
 		{content}
