@@ -1,5 +1,5 @@
 ---
-const { restaurant, address, item, stars, images, content } = Astro.props;
+const { restaurant, website, address, item, stars, images, price, content } = Astro.props;
 
 let gold_stars = '';
 for (let i = 0; i < stars; i++) {
@@ -20,7 +20,8 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 
 <div class="card">
 	<header>
-		<h2>{restaurant} <span class="item-name">{item}</span></h2>
+		<h2><a href={website}>{restaurant}</a></h2>
+		<div class="item-name">{item}, ${price}</div>
 		<address>{address}</address>
 	</header>
 
@@ -57,6 +58,14 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 
 			h2 {
 				font-weight: 900;
+				margin: 0 0 0.2rem 0;
+				a {
+					text-decoration: none;
+					color: black;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
 			}
 
 			address {
@@ -97,12 +106,8 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 	.item-name {
 		color: #bd4f00;
 		font-weight: 600;
-		&::before {
-			content: '(';
-		}
-		&::after {
-			content: ')';
-		}
+		font-size: 1.25rem;
+		margin: 0 0 1rem 0;
 	}
 
 	.content {
