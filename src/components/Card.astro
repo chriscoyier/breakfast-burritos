@@ -1,15 +1,19 @@
 ---
 const { restaurant, address, item, stars, images, content } = Astro.props;
 
-let star_emojis;
+let gold_stars = '';
 for (let i = 0; i < stars; i++) {
-	star_emojis += `★`;
+	gold_stars += '★';
+}
+let black_stars = '';
+for (let i = 0; i < 5 - stars; i++) {
+	black_stars += '☆';
 }
 
 const PUBLIC_SITE = import.meta.env.PUBLIC_SITE;
 const URL_PREFIX =
 	PUBLIC_SITE === 'true'
-		? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800'
+		? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800/'
 		: '';
 const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyier.net' : '';
 ---
@@ -17,18 +21,20 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 <div class="card">
 	<header>
 		<h2>{restaurant} <span class="item-name">{item}</span></h2>
-
 		<address>{address}</address>
 	</header>
+
 	<div class="rating">
-		<span class="stars">{star_emojis}</span>
-		<span class="star-text">{stars} / 5 Stars</span>
+		<span class="gold-stars" title="{stars} / 5 Stars">{gold_stars}</span>
+		<span class="black-stars" title="{stars} / 5 Stars">{black_stars}</span>
 	</div>
+
 	<div class="image">
-		<img src={`${URL_PREFIX}/${SITE_URL}/images/${images[0]}`} />
-		<img src={`${URL_PREFIX}/${SITE_URL}/images/${images[1]}`} />
-		<img src={`${URL_PREFIX}/${SITE_URL}/images/${images[2]}`} />
+		<img src={`${URL_PREFIX}${SITE_URL}/images/${images[0]}`} />
+		<img src={`${URL_PREFIX}${SITE_URL}/images/${images[1]}`} />
+		<img src={`${URL_PREFIX}${SITE_URL}/images/${images[2]}`} />
 	</div>
+
 	<div class="content">
 		{content}
 	</div>
@@ -64,6 +70,16 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 	.rating {
 		background: hsl(var(--yellow) / 0.25);
 		padding: 1rem 2rem;
+		display: flex;
+		align-items: center;
+		font-size: 2rem;
+	}
+	.gold-stars {
+		color: #c89200;
+	}
+	.black-stars {
+		color: #c89200;
+		opacity: 0.75;
 	}
 
 	.image {
