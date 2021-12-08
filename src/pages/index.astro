@@ -20,7 +20,10 @@ const data = Astro.fetchContent('../content/*.md');
 		))}
 	</div>
 
-	<footer>Who'</footer>
+	<footer>
+		Who's behind this amazing site? <a href="https://chriscoyier.net/">Just some dude</a> who ain't exactly
+		a foodie and likes breakfast burritos a little more than he should.
+	</footer>
 </Layout>
 
 <style lang="scss">
@@ -29,5 +32,15 @@ const data = Astro.fetchContent('../content/*.md');
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		gap: 4rem;
+		@media (max-width: 768px) {
+			padding: 1rem;
+		}
+	}
+
+	footer {
+		padding: 100px 20px;
+		margin: 0 auto;
+		text-align: center;
+		max-width: 600px;
 	}
 </style>
