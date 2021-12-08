@@ -11,10 +11,16 @@ for (let i = 0; i < 5 - stars; i++) {
 }
 
 const PUBLIC_SITE = import.meta.env.PUBLIC_SITE;
-const URL_PREFIX =
-	PUBLIC_SITE === 'true'
-		? 'https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_800/'
-		: '';
+
+const LARGE = 1200;
+const MEDIUM = 800;
+const SMALL = 400;
+
+const URL_PREFIX = `https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_`;
+
+const LARGE_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${LARGE}/` : '';
+const MEDIUM_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${MEDIUM}/` : '';
+const SMALL_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${SMALL}/` : '';
 const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyier.net' : '';
 ---
 
@@ -31,9 +37,27 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 	</div>
 
 	<div class="image">
-		<img src={`${URL_PREFIX}${SITE_URL}/images/${images[0]}`} />
-		<img src={`${URL_PREFIX}${SITE_URL}/images/${images[1]}`} />
-		<img src={`${URL_PREFIX}${SITE_URL}/images/${images[2]}`} />
+		<img
+			srcset={`
+			${LARGE_URL}${SITE_URL}/images/${images[0]} ${LARGE}w,
+			${MEDIUM_URL}${SITE_URL}/images/${images[0]} ${MEDIUM}w,
+			${SMALL_URL}${SITE_URL}/images/${images[0]} ${SMALL}w,
+		`}
+		/>
+		<img
+			srcset={`
+			${LARGE_URL}${SITE_URL}/images/${images[1]} ${LARGE}w,
+			${MEDIUM_URL}${SITE_URL}/images/${images[1]} ${MEDIUM}w,
+			${SMALL_URL}${SITE_URL}/images/${images[1]} ${SMALL}w,
+		`}
+		/>
+		<img
+			srcset={`
+			${LARGE_URL}${SITE_URL}/images/${images[2]} ${LARGE}w,
+			${MEDIUM_URL}${SITE_URL}/images/${images[2]} ${MEDIUM}w,
+			${SMALL_URL}${SITE_URL}/images/${images[2]} ${SMALL}w,
+		`}
+		/>
 	</div>
 
 	<div class="content">
