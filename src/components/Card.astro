@@ -73,9 +73,11 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 
 <style lang="scss">
 	.card {
-		box-shadow: 4px 4px 4px rgba(black, 0.2);
+		box-shadow: var(--shadow-elevation-high);
 		display: flex;
 		flex-direction: column;
+		border-radius: 20px 50px;
+		overflow: hidden;
 
 		img {
 			max-width: 100%;
@@ -83,7 +85,7 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 		}
 
 		header {
-			background-color: hsl(var(--yellow) / 0.9);
+			background-color: hsl(var(--yellow) / 0.5);
 			padding: 2rem;
 
 			h2 {
@@ -142,7 +144,7 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 
 	.content {
 		background: white;
-		padding: 1rem;
+		padding: 0 1.5rem 1rem;
 		flex: 1;
 	}
 </style>
