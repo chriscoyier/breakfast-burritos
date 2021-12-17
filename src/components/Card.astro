@@ -22,12 +22,20 @@ const LARGE_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${LARGE}/` : '';
 const MEDIUM_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${MEDIUM}/` : '';
 const SMALL_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${SMALL}/` : '';
 const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyier.net' : '';
+
+let dollarUSLocale = Intl.NumberFormat('en-US', {
+	style: 'currency',
+	currency: 'USD',
+	useGrouping: true,
+	maximumSignificantDigits: 5
+});
+const priceOutput = dollarUSLocale.format(price);
 ---
 
 <div class="card">
 	<header>
 		<h2><a href={website}>{restaurant}</a></h2>
-		<div class="item-name">{item}, ${price}</div>
+		<div class="item-name">{item}, {priceOutput}</div>
 		<address>{address}</address>
 	</header>
 
@@ -36,7 +44,7 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 		<span class="black-stars" title="{stars} / 5 Stars">{black_stars}</span>
 	</div>
 
-	<div class="image">
+	<div class="image state-1">
 		<img
 			alt="Photo of burrito insides"
 			loading="lazy"
@@ -132,7 +140,46 @@ const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyie
 		grid-template-columns: 1fr 1fr;
 
 		img:nth-of-type(1) {
+			grid-row: 1 / 2;
 			grid-column: 1 / -1;
+		}
+		img:nth-of-type(2) {
+			grid-row: 2 / 3;
+			grid-column: 1 / 2;
+		}
+		img:nth-of-type(3) {
+			grid-row: 2 / 3;
+			grid-column: 2 / 3;
+		}
+
+		&.state-2 {
+			img:nth-of-type(1) {
+				grid-row: 2 / 3;
+				grid-column: 2 / 3;
+			}
+			img:nth-of-type(2) {
+				grid-row: 1 / 2;
+				grid-column: 1 / -1;
+			}
+			img:nth-of-type(3) {
+				grid-row: 2 / 3;
+				grid-column: 1 / 2;
+			}
+		}
+
+		&.state-3 {
+			img:nth-of-type(1) {
+				grid-row: 2 / 3;
+				grid-column: 1 / 2;
+			}
+			img:nth-of-type(2) {
+				grid-row: 2 / 3;
+				grid-column: 2 / 3;
+			}
+			img:nth-of-type(3) {
+				grid-row: 1 / 2;
+				grid-column: 1 / -1;
+			}
 		}
 	}
 	.item-name {
