@@ -34,9 +34,13 @@ const { title } = Astro.props;
 		gsap.registerPlugin(Flip);
 
 		function doFlip(el) {
-			const imageParent = el.target.closest('.image');
+			const imageParent = el.target.closest('.images');
 			const allImages = imageParent.querySelectorAll('img');
-			const state = Flip.getState(gsap.utils.toArray(allImages));
+			const state = Flip.getState(allImages);
+
+			// stop the parent from collapsing
+			// while the children are absolutely positioned.
+			imageParent.style.height = `${imageParent.offsetHeight}px`;
 
 			// Make DOM or styling changes
 			if (imageParent.classList.contains('state-1')) {
@@ -50,10 +54,17 @@ const { title } = Astro.props;
 				imageParent.classList.add('state-1');
 			}
 
-			Flip.from(state, { duration: 1.2, ease: 'power1.inOut' });
+			Flip.from(state, {
+				duration: 1.2,
+				ease: 'power1.inOut',
+				absolute: true, // take the images out of the document flow during flip
+				onComplete: () => {
+					imageParent.style.height = 'unset'; // reset container height
+				}
+			});
 		}
 
-		const allImageZones = document.querySelectorAll('.image');
+		const allImageZones = document.querySelectorAll('.images');
 		allImageZones.forEach((zone) => {
 			zone.addEventListener('click', doFlip);
 		});
