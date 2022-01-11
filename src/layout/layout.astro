@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
-			href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400;800&display=swap"
+			href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;400&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
@@ -62,12 +62,22 @@ const { title } = Astro.props;
 					imageParent.style.height = 'unset'; // reset container height
 				}
 			});
+
+			// Alternate?
+			// https://twitter.com/greensock/status/1472464227633872896
 		}
 
 		const allImageZones = document.querySelectorAll('.images');
 		allImageZones.forEach((zone) => {
 			zone.addEventListener('click', doFlip);
 		});
+
+		const supportsContainerQueries = 'container' in document.documentElement.style;
+
+		// Conditional Import
+		if (!supportsContainerQueries) {
+			import('https://cdn.skypack.dev/container-query-polyfill');
+		}
 	</script>
 </html>
 
