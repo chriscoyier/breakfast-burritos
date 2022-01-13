@@ -1,10 +1,18 @@
-@import 'typography';
-
 * {
 	box-sizing: border-box;
 }
 
 html {
+	--font-size-sm: clamp(0.7rem, 0.26vw + 0.63rem, 0.84rem);
+	--font-size-base: clamp(0.88rem, 0.45vw + 0.76rem, 1.13rem);
+	--font-size-md: clamp(1.09rem, 0.74vw + 0.91rem, 1.5rem);
+	--font-size-lg: clamp(1.37rem, 1.15vw + 1.08rem, 2rem);
+	--font-size-xl: clamp(1.71rem, 1.74vw + 1.27rem, 2.66rem);
+	--font-size-xxl: clamp(2.14rem, 2.57vw + 1.49rem, 3.55rem);
+	--font-size-xxxl: clamp(2.67rem, 3.75vw + 1.73rem, 4.73rem);
+
+	font-size: var(--font-size-base);
+
 	--yellow: 47 100% 50%;
 
 	--shadow-color: 55deg 45% 54%;
@@ -35,4 +43,27 @@ html {
 
 body {
 	margin: 0;
+}
+
+@font-face {
+	font-family: 'MD Primer';
+	src: url('/fonts/MDPrimer-Black.woff2') format('woff2');
+	font-weight: 900;
+	font-style: normal;
+	font-display: swap;
+}
+
+h1,
+h2 {
+	font-family: 'MD Primer', system-ui, sans-serif;
+	font-weight: 900;
+	margin: 0 0 0.5rem 0;
+	font-size: var(--font-size-xl);
+	line-height: 1.2;
+	font-weight: 800;
+}
+
+p {
+	margin: 0 0 1rem 0;
+	max-width: 69ch;
 }

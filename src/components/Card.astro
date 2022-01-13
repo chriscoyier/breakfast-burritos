@@ -32,50 +32,52 @@ let dollarUSLocale = Intl.NumberFormat('en-US', {
 const priceOutput = dollarUSLocale.format(price);
 ---
 
-<div class="card">
-	<header>
-		<h2><a href={website}>{restaurant}</a></h2>
-		<div class="item-name">{item}, {priceOutput}</div>
-		<address>{address}</address>
-	</header>
+<div class="card-wrap">
+	<div class="card">
+		<header class="header">
+			<h2><a href={website}>{restaurant}</a></h2>
+			<div class="item-name">{item}, {priceOutput}</div>
+			<address>{address}</address>
+		</header>
 
-	<div class="rating">
-		<span class="gold-stars" title="{stars} / 5 Stars">{gold_stars}</span>
-		<span class="black-stars" title="{stars} / 5 Stars">{black_stars}</span>
-	</div>
+		<div class="rating">
+			<span class="gold-stars" title="{stars} / 5 Stars">{gold_stars}</span>
+			<span class="black-stars" title="{stars} / 5 Stars">{black_stars}</span>
+		</div>
 
-	<div class="images state-1">
-		<img
-			alt="Photo of burrito insides"
-			loading="lazy"
-			srcset={`
+		<div class="images state-1">
+			<img
+				alt="Photo of burrito insides"
+				loading="lazy"
+				srcset={`
 			${LARGE_URL}${SITE_URL}/images/${images[0]} ${LARGE}w,
 			${MEDIUM_URL}${SITE_URL}/images/${images[0]} ${MEDIUM}w,
 			${SMALL_URL}${SITE_URL}/images/${images[0]} ${SMALL}w,
 		`}
-		/>
-		<img
-			alt="Photo of burrito length"
-			loading="lazy"
-			srcset={`
+			/>
+			<img
+				alt="Photo of burrito length"
+				loading="lazy"
+				srcset={`
 			${LARGE_URL}${SITE_URL}/images/${images[1]} ${LARGE}w,
 			${MEDIUM_URL}${SITE_URL}/images/${images[1]} ${MEDIUM}w,
 			${SMALL_URL}${SITE_URL}/images/${images[1]} ${SMALL}w,
 		`}
-		/>
-		<img
-			alt="Photo of burrito packaging"
-			loading="lazy"
-			srcset={`
+			/>
+			<img
+				alt="Photo of burrito packaging"
+				loading="lazy"
+				srcset={`
 			${LARGE_URL}${SITE_URL}/images/${images[2]} ${LARGE}w,
 			${MEDIUM_URL}${SITE_URL}/images/${images[2]} ${MEDIUM}w,
 			${SMALL_URL}${SITE_URL}/images/${images[2]} ${SMALL}w,
 		`}
-		/>
-	</div>
+			/>
+		</div>
 
-	<div class="content">
-		{content}
+		<div class="content">
+			{content}
+		</div>
 	</div>
 </div>
 
@@ -92,7 +94,7 @@ const priceOutput = dollarUSLocale.format(price);
 			display: block;
 		}
 
-		header {
+		.header {
 			background-color: hsl(var(--yellow) / 0.5);
 			padding: 2rem;
 
@@ -185,5 +187,42 @@ const priceOutput = dollarUSLocale.format(price);
 		background: white;
 		padding: 0 1.5rem 1rem;
 		flex: 1;
+	}
+</style>
+
+<!-- HACK! Astro isn't parsing @container queries correctly, so have to leave unprocessed. -->
+<style global>
+	.card-wrap {
+		container: inline-size / card-wrap;
+	}
+
+	@container card-wrap size(min-width: 700px) {
+		.card.card {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			border-top-right-radius: 0;
+		}
+		.header.header {
+			grid-column: 1 / 2;
+			border-top: 1rem solid white;
+			border-left: 1rem solid white;
+			overflow: hidden;
+			border-top-left-radius: 2rem;
+		}
+		.rating.rating {
+			grid-column: 1 / -1;
+			box-shadow: 0 0 2rem hsl(0 0% 0% / 0.33);
+			position: relative;
+			z-index: 1;
+		}
+		.images.images {
+			grid-column: 2 / 3;
+			grid-row: 1 / -1;
+			gap: 1rem;
+		}
+		.content.content {
+			grid-column: 1 / -1;
+			padding: 1.5rem 3rem 1.5rem 3rem;
+		}
 	}
 </style>
