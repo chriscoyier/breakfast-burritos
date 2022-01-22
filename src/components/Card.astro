@@ -194,34 +194,40 @@ const priceOutput = dollarUSLocale.format(price);
 <style global>
 	.card-wrap {
 		container: inline-size / card-wrap;
+		height: 100%;
 	}
 
 	@container card-wrap size(min-width: 700px) {
 		.card.card {
 			display: grid;
 			grid-template-columns: 1fr 2fr;
+			grid-template-rows: min-content min-content 1fr;
 			border-top-right-radius: 0;
+			height: 100%;
 		}
 		.header.header {
 			grid-column: 1 / 2;
+			grid-row: 1 / 2;
 			border-top: 1rem solid white;
 			border-left: 1rem solid white;
-			overflow: hidden;
 			border-top-left-radius: 2rem;
+			
 		}
 		.rating.rating {
 			grid-column: 1 / -1;
+			grid-row: 2 / 3;
 			box-shadow: 0 0 2rem hsl(0 0% 0% / 0.33);
 			position: relative;
 			z-index: 1;
 		}
 		.images.images {
 			grid-column: 2 / 3;
-			grid-row: 1 / -1;
+			grid-row: 1 / 2;
 			gap: 1rem;
 		}
 		.content.content {
 			grid-column: 1 / -1;
+			grid-row: 3 / 4;
 			padding: 1.5rem 3rem 1.5rem 3rem;
 		}
 	}
