@@ -3,6 +3,7 @@
 }
 
 html {
+	/* iOS 12 doesn't support clamp... */
 	--font-size-sm: clamp(0.7rem, 0.26vw + 0.63rem, 0.84rem);
 	--font-size-base: clamp(0.88rem, 0.45vw + 0.76rem, 1.13rem);
 	--font-size-md: clamp(1.09rem, 0.74vw + 0.91rem, 1.5rem);

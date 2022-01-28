@@ -53,7 +53,8 @@ const priceOutput = dollarUSLocale.format(price);
 			${LARGE_URL}${SITE_URL}/images/${images[0]} ${LARGE}w,
 			${MEDIUM_URL}${SITE_URL}/images/${images[0]} ${MEDIUM}w,
 			${SMALL_URL}${SITE_URL}/images/${images[0]} ${SMALL}w,
-		`}
+			`}
+				sizes="(min-width: 700px) 50vw, 90vw"
 			/>
 			<img
 				alt="Photo of burrito length"
@@ -63,6 +64,7 @@ const priceOutput = dollarUSLocale.format(price);
 			${MEDIUM_URL}${SITE_URL}/images/${images[1]} ${MEDIUM}w,
 			${SMALL_URL}${SITE_URL}/images/${images[1]} ${SMALL}w,
 		`}
+				sizes="(min-width: 700px) 50vw, 90vw"
 			/>
 			<img
 				alt="Photo of burrito packaging"
@@ -72,6 +74,7 @@ const priceOutput = dollarUSLocale.format(price);
 			${MEDIUM_URL}${SITE_URL}/images/${images[2]} ${MEDIUM}w,
 			${SMALL_URL}${SITE_URL}/images/${images[2]} ${SMALL}w,
 		`}
+				sizes="(min-width: 700px) 50vw, 90vw"
 			/>
 		</div>
 
@@ -188,10 +191,8 @@ const priceOutput = dollarUSLocale.format(price);
 		padding: 0 1.5rem 1rem;
 		flex: 1;
 	}
-</style>
-
-<!-- HACK! Astro isn't parsing @container queries correctly, so have to leave unprocessed. -->
-<style global>
+</style><style global>
+	/* HACK! Astro isn't parsing @container queries correctly, so have to leave unprocessed. */
 	.card-wrap {
 		container: inline-size / card-wrap;
 		height: 100%;
@@ -211,7 +212,6 @@ const priceOutput = dollarUSLocale.format(price);
 			border-top: 1rem solid white;
 			border-left: 1rem solid white;
 			border-top-left-radius: 2rem;
-			
 		}
 		.rating.rating {
 			grid-column: 1 / -1;
