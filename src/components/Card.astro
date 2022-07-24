@@ -1,5 +1,5 @@
 ---
-const { restaurant, website, address, item, stars, images, price, content } = Astro.props;
+const { restaurant, website, address, item, stars, images, price, post } = Astro.props;
 
 let gold_stars = '';
 for (let i = 0; i < stars; i++) {
@@ -79,7 +79,7 @@ const priceOutput = dollarUSLocale.format(price);
 		</div>
 
 		<div class="content">
-			{content}
+			<slot />
 		</div>
 	</div>
 </div>
@@ -191,7 +191,7 @@ const priceOutput = dollarUSLocale.format(price);
 		padding: 0 1.5rem 1rem;
 		flex: 1;
 	}
-</style><style global>
+</style><style is:global>
 	/* HACK! Astro isn't parsing @container queries correctly, so have to leave unprocessed. */
 	.card-wrap {
 		container: inline-size / card-wrap;

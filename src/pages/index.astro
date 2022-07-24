@@ -1,22 +1,23 @@
 ---
 import Layout from '../layout/layout.astro';
 import Card from '../components/Card.astro';
-const data = Astro.fetchContent('../content/*.md');
+const data = await Astro.glob('../content/*.md');
 ---
 
 <Layout title="Breakfast Burritos in Bend, Reviewed.">
 	<div class="grid">
 		{data.map((post) => (
 			<Card
-				restaurant={post.restaurant}
-				address={post.address}
-				item={post.item}
-				stars={post.stars}
-				images={post.images}
-				content={post.content.html}
-				website={post.website}
-				price={post.price}
-			/>
+				restaurant={post.frontmatter.restaurant}
+				address={post.frontmatter.address}
+				item={post.frontmatter.item}
+				stars={post.frontmatter.stars}
+				images={post.frontmatter.images}
+				website={post.frontmatter.website}
+				price={post.frontmatter.price}
+			>
+				<post.Content />
+			</Card>
 		))}
 	</div>
 

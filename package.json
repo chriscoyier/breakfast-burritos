@@ -8,8 +8,9 @@
 		"preview": "astro preview"
 	},
 	"devDependencies": {
+		"@astrojs/react": "^0.4.2",
 		"@astrojs/renderer-react": "^0.3.0",
-		"astro": "^0.22.17",
+		"astro": "^0.0.0-rc-20220722032928",
 		"prettier": "^2.5.0",
 		"prettier-plugin-astro": "^0.0.11",
 		"react": "^17.0.2",
