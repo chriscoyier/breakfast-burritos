@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
+import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-	sitemap: true,
-	integrations: [react()]
+  site: 'https://burritos.chriscoyier.net',
+  integrations: [react(), sitemap()]
 });
