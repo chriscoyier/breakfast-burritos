@@ -13,6 +13,7 @@ html {
 	--font-size-xxxl: clamp(2.67rem, 3.75vw + 1.73rem, 4.73rem);
 
 	font-size: var(--font-size-base);
+	font-family: 'Roboto Flex', system-ui, sans-serif;
 
 	--yellow: 47 100% 50%;
 
@@ -38,7 +39,6 @@ html {
 	background-size: cover, 400px;
 	background-attachment: fixed;
 	height: 100vh;
-	font-family: 'Outfit', sans-serif;
 	line-height: 1.4;
 }
 
@@ -47,21 +47,9 @@ body {
 }
 
 @font-face {
-	font-family: 'MD Primer';
-	src: url('/fonts/MDPrimer-Black.woff2') format('woff2');
-	font-weight: 900;
-	font-style: normal;
+	font-family: 'Roboto Flex';
+	src: url('/fonts/RobotoFlex.woff2') format('woff2');
 	font-display: swap;
-}
-
-h1,
-h2 {
-	font-family: 'MD Primer', system-ui, sans-serif;
-	font-weight: 900;
-	margin: 0 0 0.5rem 0;
-	font-size: var(--font-size-xl);
-	line-height: 1.2;
-	font-weight: 800;
 }
 
 p {
