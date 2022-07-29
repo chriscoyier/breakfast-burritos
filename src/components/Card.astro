@@ -68,7 +68,7 @@ const priceOutput = dollarUSLocale.format(price);
 			/>
 			<img
 				alt="Photo of burrito packaging"
-				loading="lazy"  
+				loading="lazy"
 				srcset={`
 			${LARGE_URL}${SITE_URL}/images/${images[2]} ${LARGE}w,
 			${MEDIUM_URL}${SITE_URL}/images/${images[2]} ${MEDIUM}w,
@@ -86,7 +86,7 @@ const priceOutput = dollarUSLocale.format(price);
 
 <style lang="scss">
 	.card {
-		box-shadow: var(--shadow-elevation-high);
+		box-: var(--shadow-elevation-high);
 		display: flex;
 		flex-direction: column;
 		border-radius: 20px 50px;
@@ -100,23 +100,6 @@ const priceOutput = dollarUSLocale.format(price);
 		.header {
 			background-color: hsl(var(--yellow) / 0.5);
 			padding: 2rem;
-
-			h2 {
-				font-variation-settings: "wght" 1000, "wdth" 25, "opsz" 13.44, "GRAD" 150, "slnt" 0, "XTRA" 575, "XOPQ" 98.04, "YOPQ" 78.9, "YTLC" 416, "YTUC" 760, "YTAS" 854, "YTDE" -98, "YTFI" 788;
-
-				font-size: var(--font-size-xl);
-				text-transform: uppercase;
-				line-height: 1.2;
-				margin: 0 0 0.2rem 0;
-				a {
-					text-decoration: none;
-					color: black;
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-
 			address {
 				font-weight: 300;
 				font-size: var(--font-size-sm);
@@ -194,6 +177,9 @@ const priceOutput = dollarUSLocale.format(price);
 		background: white;
 		padding: 0 1.5rem 1rem;
 		flex: 1;
+		h3 {
+			color: blue;
+		}
 	}
 
 	.card-wrap {
