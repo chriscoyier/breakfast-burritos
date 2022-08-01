@@ -1,5 +1,5 @@
 ---
-const { restaurant, website, address, item, stars, images, price, post } = Astro.props;
+const { restaurant, website, address, item, stars, images, price } = Astro.props;
 
 let gold_stars = '';
 for (let i = 0; i < stars; i++) {
@@ -86,7 +86,7 @@ const priceOutput = dollarUSLocale.format(price);
 
 <style lang="scss">
 	.card {
-		box-shadow: var(--shadow-elevation-high);
+		box-: var(--shadow-elevation-high);
 		display: flex;
 		flex-direction: column;
 		border-radius: 20px 50px;
@@ -100,19 +100,6 @@ const priceOutput = dollarUSLocale.format(price);
 		.header {
 			background-color: hsl(var(--yellow) / 0.5);
 			padding: 2rem;
-
-			h2 {
-				font-weight: 900;
-				margin: 0 0 0.2rem 0;
-				a {
-					text-decoration: none;
-					color: black;
-					&:hover {
-						text-decoration: underline;
-					}
-				}
-			}
-
 			address {
 				font-weight: 300;
 				font-size: var(--font-size-sm);
@@ -190,6 +177,9 @@ const priceOutput = dollarUSLocale.format(price);
 		background: white;
 		padding: 0 1.5rem 1rem;
 		flex: 1;
+		h3 {
+			color: blue;
+		}
 	}
 
 	.card-wrap {

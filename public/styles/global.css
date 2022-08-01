@@ -13,6 +13,7 @@ html {
 	--font-size-xxxl: clamp(2.67rem, 3.75vw + 1.73rem, 4.73rem);
 
 	font-size: var(--font-size-base);
+	font-family: 'Roboto Flex', system-ui, sans-serif;
 
 	--yellow: 47 100% 50%;
 
@@ -38,7 +39,6 @@ html {
 	background-size: cover, 400px;
 	background-attachment: fixed;
 	height: 100vh;
-	font-family: 'Outfit', sans-serif;
 	line-height: 1.4;
 }
 
@@ -47,24 +47,40 @@ body {
 }
 
 @font-face {
-	font-family: 'MD Primer';
-	src: url('/fonts/MDPrimer-Black.woff2') format('woff2');
-	font-weight: 900;
-	font-style: normal;
+	font-family: 'Roboto Flex';
+	src: url('/fonts/RobotoFlex.woff2') format('woff2');
 	font-display: swap;
 }
 
-h1,
 h2 {
-	font-family: 'MD Primer', system-ui, sans-serif;
-	font-weight: 900;
-	margin: 0 0 0.5rem 0;
+	font-variation-settings: 'wght' 1000, 'wdth' 25, 'opsz' 13.44, 'GRAD' 150, 'slnt' 0, 'XTRA' 575,
+		'XOPQ' 98.04, 'YOPQ' 78.9, 'YTLC' 416, 'YTUC' 760, 'YTAS' 854, 'YTDE' -98, 'YTFI' 788;
+
 	font-size: var(--font-size-xl);
+	text-transform: uppercase;
 	line-height: 1.2;
-	font-weight: 800;
+	margin: 0 0 0.2rem 0;
+}
+h2 a {
+	text-decoration: none;
+	color: black;
+}
+h2 a:hover,
+h2 a:focus {
+	text-decoration: underline;
+}
+h3 {
+	font-variation-settings: 'wght' 649, 'wdth' 151, 'opsz' 144, 'GRAD' -0.5, 'slnt' 0, 'XTRA' 468.6,
+		'XOPQ' 96.56, 'YOPQ' 78.9, 'YTLC' 514.56, 'YTUC' 711.28, 'YTAS' 749.45, 'YTDE' -203.57,
+		'YTFI' 737.84;
+	text-transform: uppercase;
 }
 
 p {
 	margin: 0 0 1rem 0;
 	max-width: 69ch;
+
+	font-variation-settings: 'wght' 505, 'wdth' 143.44, 'opsz' 107.28, 'GRAD' 62.5, 'slnt' 0,
+		'XTRA' 505, 'XOPQ' 96.56, 'YOPQ' 78.9, 'YTLC' 514.56, 'YTUC' 711.28, 'YTAS' 749.45,
+		'YTDE' -203.57, 'YTFI' 737.84;
 }
