@@ -80,7 +80,7 @@ p {
 	margin: 0 0 1rem 0;
 	max-width: 69ch;
 
-	font-variation-settings: 'wght' 505, 'wdth' 143.44, 'opsz' 107.28, 'GRAD' 62.5, 'slnt' 0,
-		'XTRA' 505, 'XOPQ' 96.56, 'YOPQ' 78.9, 'YTLC' 514.56, 'YTUC' 711.28, 'YTAS' 749.45,
-		'YTDE' -203.57, 'YTFI' 737.84;
+	font-variation-settings: 'wght' 145, 'wdth' 25, 'opsz' 14.8, 'GRAD' -109, 'slnt' 0, 'XTRA' 533,
+		'XOPQ' 95.08, 'YOPQ' 78.9, 'YTLC' 500.7, 'YTUC' 755.36, 'YTAS' 755.6, 'YTDE' -203.57,
+		'YTFI' 740.12;
 }
