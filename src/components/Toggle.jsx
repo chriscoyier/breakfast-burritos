@@ -3,16 +3,14 @@ export default function Toggle() {
 		<div>
 			<button
 				onClick={() => {
-					console.log('grid');
-					window.grid.classList.toggle('grid table');
+					window.grid.dataset.format = 'grid';
 				}}
 			>
 				Grid
 			</button>
 			<button
 				onClick={() => {
-					console.log('table');
-					window.grid.classList.toggle('grid table');
+					window.grid.dataset.format = 'table';
 				}}
 			>
 				Table
