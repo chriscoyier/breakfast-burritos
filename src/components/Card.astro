@@ -112,17 +112,24 @@ const priceOutput = dollarUSLocale.format(price);
 
 	:global(#grid[data-format='table']) {
 		padding: 2rem;
+
+		.card-wrap {
+			display: contents;
+		}
 		.card {
 			display: table-row;
+			width: 100%;
 			> * {
 				display: table-cell;
 				vertical-align: middle;
+				border-bottom: 1px solid rgba(black, 0.2);
 			}
 
 			img {
 				max-width: 100px;
 			}
-			.content {
+			.content,
+			.images {
 				display: none;
 			}
 
@@ -130,18 +137,9 @@ const priceOutput = dollarUSLocale.format(price);
 				padding: 0;
 				background: none;
 			}
-
-			.images {
-				background: none;
-				img {
-					aspect-ratio: 16 / 9;
-					object-fit: cover;
-				}
-			}
 		}
 		.header {
 			display: table-cell;
-			width: 50%;
 			> * {
 				font-size: 1rem;
 			}

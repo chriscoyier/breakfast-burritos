@@ -6,14 +6,14 @@ export default function Toggle() {
 					window.grid.dataset.format = 'grid';
 				}}
 			>
-				Grid
+				Elaborate Grid
 			</button>
 			<button
 				onClick={() => {
 					window.grid.dataset.format = 'table';
 				}}
 			>
-				Table
+				Super Quick List
 			</button>
 		</div>
 	);
