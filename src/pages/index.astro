@@ -1,11 +1,16 @@
 ---
 import Layout from '../layout/layout.astro';
+import Toggle from '../components/Toggle.jsx';
 import Card from '../components/Card.astro';
 const data = await Astro.glob('../content/*.md');
+
+data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
 ---
 
 <Layout title="Breakfast Burritos in Bend, Reviewed.">
-	<div class="grid">
+	<Toggle client:visible />
+
+	<div id="grid" class="grid" data-format="table">
 		{data.map((post) => (
 			<Card
 				restaurant={post.frontmatter.restaurant}
@@ -28,7 +33,7 @@ const data = await Astro.glob('../content/*.md');
 </Layout>
 
 <style lang="scss">
-	.grid {
+	.grid[data-format='grid'] {
 		padding: 0 4rem;
 		display: grid;
 		// grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
@@ -39,6 +44,12 @@ const data = await Astro.glob('../content/*.md');
 			padding: 1rem;
 			grid-template-columns: 1fr;
 		}
+	}
+
+	.grid[data-format='table'] {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
 	}
 
 	footer {

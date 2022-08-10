@@ -1,5 +1,6 @@
 ---
 const { title } = Astro.props;
+import '../styles/global.scss';
 ---
 
 <html>
@@ -22,71 +23,69 @@ const { title } = Astro.props;
 			<main><slot /></main>
 		</div>
 
-	</body>
-
-</html>
-
-<style lang="scss">
-	.logo {
-		background-image: url(/images/logo.svg);
-		background-repeat: no-repeat;
-		background-size: 300px;
-		height: 200px;
-		background-blend-mode: darken;
-		text-indent: -9999px;
-		overflow: hidden;
-	}
-</style>
-
-<script>
-	import gsap from 'gsap';
-	import Flip from 'gsap/Flip';
-
-	gsap.registerPlugin(Flip);
-
-	function doFlip(el) {
-		const imageParent = el.target.closest('.images');
-		const allImages = imageParent.querySelectorAll('img');
-		const state = Flip.getState(allImages);
-
-		// stop the parent from collapsing
-		// while the children are absolutely positioned.
-		imageParent.style.height = `${imageParent.offsetHeight}px`;
-
-		// Make DOM or styling changes
-		if (imageParent.classList.contains('state-1')) {
-			imageParent.classList.remove('state-1');
-			imageParent.classList.add('state-2');
-		} else if (imageParent.classList.contains('state-2')) {
-			imageParent.classList.remove('state-2');
-			imageParent.classList.add('state-3');
-		} else {
-			imageParent.classList.remove('state-3');
-			imageParent.classList.add('state-1');
-		}
-
-		Flip.from(state, {
-			duration: 1.2,
-			ease: 'power1.inOut',
-			absolute: true, // take the images out of the document flow during flip
-			onComplete: () => {
-				imageParent.style.height = 'unset'; // reset container height
+		<style lang="scss">
+			.logo {
+				background-image: url(/images/logo.svg);
+				background-repeat: no-repeat;
+				background-size: 300px;
+				height: 200px;
+				background-blend-mode: darken;
+				text-indent: -9999px;
+				overflow: hidden;
 			}
-		});
+		</style>
 
-		// Alternate?
-		// https://twitter.com/greensock/status/1472464227633872896
-	}
+		<script>
+			import gsap from 'gsap';
+			import Flip from 'gsap/Flip';
 
-	const allImageZones = document.querySelectorAll('.images');
-	allImageZones.forEach((zone) => {
-		zone.addEventListener('click', doFlip);
-	});
+			gsap.registerPlugin(Flip);
 
-	const supportsContainerQueries = 'container' in document.documentElement.style;
+			function doFlip(el) {
+				const imageParent = el.target.closest('.images');
+				const allImages = imageParent.querySelectorAll('img');
+				const state = Flip.getState(allImages);
 
-	// Conditional Import
-	if (!supportsContainerQueries) {
-		import('https://cdn.skypack.dev/container-query-polyfill');
-	}
-</script>
+				// stop the parent from collapsing
+				// while the children are absolutely positioned.
+				imageParent.style.height = `${imageParent.offsetHeight}px`;
+
+				// Make DOM or styling changes
+				if (imageParent.classList.contains('state-1')) {
+					imageParent.classList.remove('state-1');
+					imageParent.classList.add('state-2');
+				} else if (imageParent.classList.contains('state-2')) {
+					imageParent.classList.remove('state-2');
+					imageParent.classList.add('state-3');
+				} else {
+					imageParent.classList.remove('state-3');
+					imageParent.classList.add('state-1');
+				}
+
+				Flip.from(state, {
+					duration: 1.2,
+					ease: 'power1.inOut',
+					absolute: true, // take the images out of the document flow during flip
+					onComplete: () => {
+						imageParent.style.height = 'unset'; // reset container height
+					}
+				});
+
+				// Alternate?
+				// https://twitter.com/greensock/status/1472464227633872896
+			}
+
+			const allImageZones = document.querySelectorAll('.images');
+			allImageZones.forEach((zone) => {
+				zone.addEventListener('click', doFlip);
+			});
+
+			const supportsContainerQueries = 'container' in document.documentElement.style;
+
+			// Conditional Import
+			if (!supportsContainerQueries) {
+				import('https://cdn.skypack.dev/container-query-polyfill');
+			}
+		</script>
+	</body>
+</html>
