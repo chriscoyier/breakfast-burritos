@@ -10,7 +10,7 @@ data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
 <Layout title="Breakfast Burritos in Bend, Reviewed.">
 	<Toggle client:visible />
 
-	<div id="grid" class="grid" data-format="table">
+	<div class="grid">
 		{data.map((post) => (
 			<Card
 				restaurant={post.frontmatter.restaurant}
@@ -33,23 +33,37 @@ data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
 </Layout>
 
 <style lang="scss">
-	.grid[data-format='grid'] {
-		padding: 0 4rem;
-		display: grid;
-		// grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
-		grid-template-columns: repeat(2, 1fr);
-		grid-template-rows: masonry;
-		gap: 4rem;
-		@media (max-width: 1000px) {
-			padding: 1rem;
-			grid-template-columns: 1fr;
+	body[data-format='grid'] {
+		.grid {
+			padding: 0 4rem;
+			display: grid;
+			// grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
+			grid-template-columns: repeat(2, 1fr);
+			grid-template-rows: masonry;
+			gap: 4rem;
+			@media (max-width: 1000px) {
+				padding: 1rem;
+				grid-template-columns: 1fr;
+			}
+		}
+
+		:global(.button-grid) {
+			background: black;
+			color: white;
 		}
 	}
 
-	.grid[data-format='table'] {
-		display: table;
-		table-layout: fixed;
-		width: 100%;
+	body[data-format='table'] {
+		.grid {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
+			padding: 1rem;
+		}
+		:global(.button-table) {
+			background: black;
+			color: white;
+		}
 	}
 
 	footer {

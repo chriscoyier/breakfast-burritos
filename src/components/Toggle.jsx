@@ -1,19 +1,21 @@
 export default function Toggle() {
 	return (
-		<div>
+		<div className="toggle-area">
 			<button
+				className="button-grid"
 				onClick={() => {
-					window.grid.dataset.format = 'grid';
+					document.body.dataset.format = 'grid';
 				}}
 			>
 				Elaborate Grid
 			</button>
 			<button
+				className="button-table"
 				onClick={() => {
-					window.grid.dataset.format = 'table';
+					document.body.dataset.format = 'table';
 				}}
 			>
-				Super Quick List
+				Quick List
 			</button>
 		</div>
 	);

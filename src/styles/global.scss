@@ -7,8 +7,8 @@ html {
 	--font-size-sm: clamp(0.7rem, 0.26vw + 0.63rem, 0.84rem);
 	--font-size-base: clamp(0.88rem, 0.45vw + 0.76rem, 1.13rem);
 	--font-size-md: clamp(1.09rem, 0.74vw + 0.91rem, 1.5rem);
-	--font-size-lg: clamp(1.37rem, 1.15vw + 1.08rem, 2rem);
-	--font-size-xl: clamp(1.71rem, 1.74vw + 1.27rem, 2.66rem);
+	--font-size-lg: clamp(1.37rem, 1vw + 1rem, 1.75rem);
+	--font-size-xl: clamp(2rem, 1.75vw + 1.25rem, 3rem);
 	--font-size-xxl: clamp(2.14rem, 2.57vw + 1.49rem, 3.55rem);
 	--font-size-xxxl: clamp(2.67rem, 3.75vw + 1.73rem, 4.73rem);
 
@@ -39,7 +39,7 @@ html {
 	background-size: cover, 400px;
 	background-attachment: fixed;
 	height: 100vh;
-	line-height: 1.4;
+	line-height: 1.5;
 }
 
 body {
@@ -47,9 +47,7 @@ body {
 }
 
 h2 {
-	font-variation-settings: 'wght' 1000, 'wdth' 25, 'opsz' 13.44, 'GRAD' 150, 'slnt' 0, 'XTRA' 575,
-		'XOPQ' 98.04, 'YOPQ' 78.9, 'YTLC' 416, 'YTUC' 760, 'YTAS' 854, 'YTDE' -98, 'YTFI' 788;
-
+	font-variation-settings: 'wght' 1000, 'wdth' 40, 'opsz' 50, 'slnt' 0;
 	font-size: var(--font-size-xl);
 	text-transform: uppercase;
 	line-height: 1.2;
@@ -64,17 +62,28 @@ h2 a:focus {
 	text-decoration: underline;
 }
 h3 {
-	font-variation-settings: 'wght' 649, 'wdth' 151, 'opsz' 144, 'GRAD' -0.5, 'slnt' 0, 'XTRA' 468.6,
-		'XOPQ' 96.56, 'YOPQ' 78.9, 'YTLC' 514.56, 'YTUC' 711.28, 'YTAS' 749.45, 'YTDE' -203.57,
-		'YTFI' 737.84;
+	font-size: var(--font-size-lg);
+	font-variation-settings: 'wght' 750, 'wdth' 151, 'opsz' 144, 'GRAD' -0.5, 'slnt' 0;
 	text-transform: uppercase;
+	margin: 0.2rem 0;
 }
 
 p {
 	margin: 0 0 1rem 0;
 	max-width: 69ch;
+}
 
-	font-variation-settings: 'wght' 145, 'wdth' 25, 'opsz' 14.8, 'GRAD' -109, 'slnt' 0, 'XTRA' 533,
-		'XOPQ' 95.08, 'YOPQ' 78.9, 'YTLC' 500.7, 'YTUC' 755.36, 'YTAS' 755.6, 'YTDE' -203.57,
-		'YTFI' 740.12;
+.toggle-area {
+	position: absolute;
+	top: 0;
+	right: 0;
+	button {
+		border: 0;
+		border-bottom: 2px solid rgb(0 0 0 / 0.5);
+		border-left: 2px solid rgb(0 0 0 / 0.5);
+		background: none;
+		color: black;
+		font-family: inherit;
+		padding: 0.5rem 0.66rem;
+	}
 }

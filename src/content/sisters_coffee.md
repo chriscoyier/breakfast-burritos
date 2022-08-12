@@ -14,4 +14,4 @@ Excellent, absolutely top-tier breakfast burrito. Busting with flavor. Didn't ne
 
 ### The Bad
 
-All the way in Sisters, and that cafe is just massively popular there. I had quite a wait, which would have been more than I wanted if I wasn't just hanging out anyway.
+It's all the way out in Sisters, and that cafe is just massively popular there. I had quite a wait, which would have been more than I wanted if I wasn't just hanging out anyway. There is a Sister's Coffee in the Old Mill, but they don't have a breakfast burrito.

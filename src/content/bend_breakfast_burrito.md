@@ -3,7 +3,7 @@ restaurant: 'Bend Breakfast Burrito'
 website: https://www.bendbreakfastburrito.com/
 address: '921 NW Mount Washington Drive, Bend OR 97703'
 item: 'Bacon'
-stars: 5
+stars: 4
 images: [bbb_original_primary.jpg, bbb_original_length.jpg, bbb_original_package.jpg]
 price: 9.50
 ---

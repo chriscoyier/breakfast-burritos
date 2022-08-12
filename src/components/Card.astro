@@ -85,7 +85,7 @@ const priceOutput = dollarUSLocale.format(price);
 </div>
 
 <style lang="scss">
-	:global(#grid[data-format='grid']) {
+	:global(body[data-format='grid']) {
 		.card {
 			box-shadow: var(--shadow-elevation-high);
 			display: flex;
@@ -110,9 +110,7 @@ const priceOutput = dollarUSLocale.format(price);
 		}
 	}
 
-	:global(#grid[data-format='table']) {
-		padding: 2rem;
-
+	:global(body[data-format='table']) {
 		.card-wrap {
 			display: contents;
 		}
@@ -121,7 +119,6 @@ const priceOutput = dollarUSLocale.format(price);
 			width: 100%;
 			> * {
 				display: table-cell;
-				vertical-align: middle;
 				border-bottom: 1px solid rgba(black, 0.2);
 			}
 
@@ -139,12 +136,16 @@ const priceOutput = dollarUSLocale.format(price);
 			}
 		}
 		.header {
-			display: table-cell;
+			display: contents;
+
 			> * {
+				display: table-cell;
 				font-size: 1rem;
+				border-bottom: 1px solid rgba(black, 0.2);
 			}
 			h2 {
-				font-size: 1.3rem;
+				font-size: var(--font-size-lg);
+				padding: 0.5rem 0;
 			}
 			address {
 				font-size: 0.8rem;
