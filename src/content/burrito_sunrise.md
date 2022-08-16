@@ -13,11 +13,7 @@ images:
 price: 10.00
 ---
 
-### The Good
-
 My fourth time was a charm here. The Supreme Burrito was a damn fine take. Where Bend Breakfast Burrito kinda mixes all the burrito filling ingredients together making it homogenous (but great), Burrito Sunrise keeps all the ingredients very separate but layered. It's the difference between crafting/grilling the burritos on the spot (Burrito Sunrise), and making them well ahead of time (Bend Breakfast Burrito). I'm fond of them both, but I think it's fair to say a Burrito Sunrise has a higher peak-deliciousness point (one minute after they give it to you), and fades quickly, where Bend Breakfast Burrito remains delicious for hours/days. In other words, don't take your Burrito Sunrise burrito to the mountain.
-
-### The Bad
 
 This place has all the burrito buzz right now. Perhaps because of the iconic yellow truck right on Greenwood. It took me four tries to find a burrito I found worthy of the buzz. I've had The Hog, The Carne Asade, and The Chorizo and I didn't like _any_ of them. Fortunately, the one I've found here is damn good.
 

@@ -8,10 +8,6 @@ images: [mcdonalds_primary.jpg, mcdonalds_length.jpg, mcdonalds_package.jpg]
 price: 1.29
 ---
 
-### The Good
-
 I find something comforting and satisyfing about this little garbage burrito. It's always exactly the same, whether you get it on Century drive, the heart of Los Angeles, or off some country highway in Virginia. It has that "tested by thousands of people and nobody found it too offputting" feel to it.
-
-### The Bad
 
 It's a little garbage burrito. It's not particularly tasty. It's weirdly soft, like little edible microwaved feather pillow.

@@ -13,10 +13,6 @@ images:
 price: 6.99
 ---
 
-### The Good
-
 It's in a league of it's own as far as approach. It's very saucey and wet and kinda looks like it's going to be gross, but it's actually quite good. Perhaps the most flavorful of all the burritos in the area.
-
-### The Bad
 
 They only come pre-made and cold. It's such a wet burrito that the tortilla is kinda soaked through and sloppy. The trick is to microwave it to get it warm, but then toast the outside to get the tortilla back in shape, and even then, it's a knife and forker.

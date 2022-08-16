@@ -8,10 +8,6 @@ images: [lucys_bacon_primary.jpg, lucys_bacon_length.jpg, lucys_bacon_package.jp
 price: 7.75
 ---
 
-### The Good
-
 They know what they are doing with the Bacon at Lucy's. The bacon is thick and cooked until very crispy so it holds up to the moist burrito filling. It's quite large, and at the price, quite a value. I also like that they open at 6am.
-
-### The Bad
 
 The location on 3rd is too close to the stupid stoplight and it's always hard to pull out of there.

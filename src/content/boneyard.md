@@ -8,10 +8,6 @@ images: [boneyard_primary.jpg, boneyard_length.jpg, boneyard_package.jpg]
 price: 13.00
 ---
 
-### The Good
-
 Great presentation. Great salsa. Ultimately just a decent burrito.
 
-### The Bad
-
-I think it's just a Sunday-brunch-only thing.
+I think it's just a Sunday-brunch-only thing, making it harder to get your hands on than most of the others here.
