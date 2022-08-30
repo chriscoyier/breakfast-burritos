@@ -47,9 +47,9 @@ body {
 }
 
 h2 {
-	font-variation-settings: 'wght' 1000, 'wdth' 40, 'opsz' 50, 'slnt' 0;
+	font-variation-settings: 'wght' 930, 'wdth' 50, 'opsz' 80;
+	letter-spacing: -0.03rem;
 	font-size: var(--font-size-xl);
-	text-transform: uppercase;
 	line-height: 1.2;
 	margin: 0 0 0.2rem 0;
 }
@@ -63,7 +63,7 @@ h2 a:focus {
 }
 h3 {
 	font-size: var(--font-size-lg);
-	font-variation-settings: 'wght' 750, 'wdth' 151, 'opsz' 144, 'GRAD' -0.5, 'slnt' 0;
+	font-variation-settings: 'wght' 750, 'wdth' 151, 'opsz' 50;
 	text-transform: uppercase;
 	margin: 0.2rem 0;
 }
