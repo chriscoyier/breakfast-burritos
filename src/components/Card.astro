@@ -228,12 +228,12 @@ const priceOutput = dollarUSLocale.format(price);
 	}
 
 	.card-wrap {
-		container: inline-size / card-wrap;
+		container: card-wrap / inline-size;
 		height: 100%;
 	}
 
-	@container card-wrap size(min-width: 700px) {
-		:global(#grid[data-format='grid']) {
+	@container card-wrap (min-width: 700px) {
+		:global(body[data-format='grid']) {
 			.card.card {
 				display: grid;
 				grid-template-columns: 1fr 2fr;
