@@ -1,5 +1,5 @@
 ---
-restaurant: 'Don Gambinos'
+restaurant: 'Don Gabinos'
 website: https://dongabinos.com/
 address: '304 SE 3rd Street'
 item: 'Buenos Dias'
