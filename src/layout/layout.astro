@@ -78,13 +78,6 @@ import '../styles/global.scss';
 			allImageZones.forEach((zone) => {
 				zone.addEventListener('click', doFlip);
 			});
-
-			const supportsContainerQueries = 'container' in document.documentElement.style;
-
-			// Conditional Import
-			if (!supportsContainerQueries) {
-				import('https://cdn.skypack.dev/container-query-polyfill');
-			}
 		</script>
 	</body>
 </html>
