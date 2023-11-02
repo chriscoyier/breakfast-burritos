@@ -4,7 +4,9 @@ website: http://www.solverdebend.com/
 address: 1040 NW Galveston Ave, Bend, OR 97701
 item: Bacon
 stars: 4
-images: [sol_verde_primary.jpg, sol_verde_length.jpg, sol_verde_package.jpg]
+imagePrimary: '../../images/sol_verde_primary.jpg'
+imageLength: '../../images/sol_verde_length.jpg'
+imagePackage: '../../images/sol_verde_package.jpg'
 price: 13
 ---
 

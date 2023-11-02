@@ -4,6 +4,9 @@ website: http://cafesintra.com/
 address: '1024 NW Bond Street, Bend OR 97701'
 item: 'Bacon'
 stars: 3
+imagePrimary: '../../images/sintra_bacon_primary.jpg'
+imageLength: '../../images/sintra_bacon_length.jpg'
+imagePackage: '../../images/sintra_bacon_package.jpg'
 images: [sintra_bacon_primary.jpg, sintra_bacon_length.jpg, sintra_bacon_package.jpg]
 price: 13.50
 ---

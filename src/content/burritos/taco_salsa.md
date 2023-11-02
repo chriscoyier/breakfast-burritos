@@ -4,7 +4,9 @@ website: https://www.yelp.com/biz/taco-salsa-bend
 address: '1365 NW Galveston Ave, Bend OR 97701'
 item: 'Bacon'
 stars: 4
-images: [taco_salsa_primary.jpg, taco_salsa_length.jpg, taco_salsa_package.jpg]
+imagePrimary: '../../images/taco_salsa_primary.jpg'
+imageLength: '../../images/taco_salsa_length.jpg'
+imagePackage: '../../images/taco_salsa_package.jpg'
 price: 8.50
 ---
 

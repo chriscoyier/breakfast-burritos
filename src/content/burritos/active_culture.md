@@ -4,7 +4,9 @@ website: http://activeculturecafe.com/bend-menu/
 address: '285 NW Riverside Blvd, Bend OR 97701'
 item: 'Original'
 stars: 4
-images: [active_culture_primary.jpg, active_culture_length.jpg, active_culture_package.jpg]
+imagePrimary: '../../images/active_culture_primary.jpg'
+imageLength: '../../images/active_culture_length.jpg'
+imagePackage: '../../images/active_culture_package.jpg'
 price: 14.99
 ---
 

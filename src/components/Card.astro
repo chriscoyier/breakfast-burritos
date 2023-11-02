@@ -1,5 +1,18 @@
 ---
-const { restaurant, website, address, item, stars, images, price } = Astro.props;
+import { Image } from 'astro:assets';
+
+const {
+	restaurant,
+	website,
+	address,
+	item,
+	stars,
+	imagePrimary,
+	imageLength,
+	imagePackage,
+	price,
+	content
+} = Astro.props;
 
 let gold_stars = '';
 for (let i = 0; i < stars; i++) {
@@ -9,19 +22,6 @@ let black_stars = '';
 for (let i = 0; i < 5 - stars; i++) {
 	black_stars += '☆';
 }
-
-const PUBLIC_SITE = import.meta.env.PUBLIC_SITE;
-
-const LARGE = 1200;
-const MEDIUM = 800;
-const SMALL = 400;
-
-const URL_PREFIX = `https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_`;
-
-const LARGE_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${LARGE}/` : '';
-const MEDIUM_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${MEDIUM}/` : '';
-const SMALL_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${SMALL}/` : '';
-const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyier.net' : '';
 
 let dollarUSLocale = Intl.NumberFormat('en-US', {
 	style: 'currency',
@@ -46,41 +46,32 @@ const priceOutput = dollarUSLocale.format(price);
 		</div>
 
 		<div class="images state-1">
-			<img
-				alt="Photo of burrito insides"
+			<Image
+				alt="Photo of burrito's insides"
 				loading="lazy"
-				srcset={`
-			${LARGE_URL}${SITE_URL}/images/${images[0]} ${LARGE}w,
-			${MEDIUM_URL}${SITE_URL}/images/${images[0]} ${MEDIUM}w,
-			${SMALL_URL}${SITE_URL}/images/${images[0]} ${SMALL}w,
-			`}
-				sizes="(min-width: 700px) 50vw, 90vw"
+				src={imagePrimary}
+				width="672"
+				height="448"
 			/>
-			<img
-				alt="Photo of burrito length"
+			<Image
+				alt="Photo of the burrito's length"
 				loading="lazy"
-				srcset={`
-			${LARGE_URL}${SITE_URL}/images/${images[1]} ${LARGE}w,
-			${MEDIUM_URL}${SITE_URL}/images/${images[1]} ${MEDIUM}w,
-			${SMALL_URL}${SITE_URL}/images/${images[1]} ${SMALL}w,
-		`}
-				sizes="(min-width: 700px) 50vw, 90vw"
+				src={imageLength}
+				width="672"
+				height="448"
 			/>
-			<img
-				alt="Photo of burrito packaging"
+			<Image
+				alt="Photo of burrito's packaging"
 				loading="lazy"
-				srcset={`
-			${LARGE_URL}${SITE_URL}/images/${images[2]} ${LARGE}w,
-			${MEDIUM_URL}${SITE_URL}/images/${images[2]} ${MEDIUM}w,
-			${SMALL_URL}${SITE_URL}/images/${images[2]} ${SMALL}w,
-		`}
-				sizes="(min-width: 700px) 50vw, 90vw"
+				src={imagePackage}
+				width="672"
+				height="448"
 			/>
 		</div>
 
 		<div class="content">
 			<h3>Review</h3>
-			<slot />
+			{(<slot />)}
 		</div>
 	</div>
 </div>
@@ -96,6 +87,7 @@ const priceOutput = dollarUSLocale.format(price);
 
 			img {
 				max-width: 100%;
+				height: auto;
 				display: block;
 			}
 
@@ -123,6 +115,10 @@ const priceOutput = dollarUSLocale.format(price);
 				border-bottom: 1px solid rgba(black, 0.2);
 			}
 
+			&:hover {
+				background: rgba(black, 0.05);
+			}
+
 			img {
 				max-width: 100px;
 			}
@@ -132,12 +128,13 @@ const priceOutput = dollarUSLocale.format(price);
 			}
 
 			.rating {
-				padding: 0;
+				padding: 0 0 0 0.5rem;
 				background: none;
+				text-align: right;
 			}
 		}
 		.header {
-			display: contents;
+			display: contents !important;
 
 			> * {
 				display: table-cell;

@@ -4,7 +4,9 @@ website: https://local.safeway.com/safeway/or/bend/320-w-century-blvd.html
 address: '320 W Century Blvd, Bend OR 97702'
 item: 'Bacon'
 stars: 2
-images: [safeway_bacon_primary.jpg, safeway_bacon_length.jpg, safeway_bacon_package.jpg]
+imagePrimary: '../../images/safeway_bacon_primary.jpg'
+imageLength: '../../images/safeway_bacon_length.jpg'
+imagePackage: '../../images/safeway_bacon_package.jpg'
 price: 3.99
 ---
 

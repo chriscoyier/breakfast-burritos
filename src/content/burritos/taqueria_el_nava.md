@@ -4,7 +4,9 @@ website: https://www.facebook.com/profile.php?id=100063504792923
 address: '911 SE Armour Rd, Bend, OR 97702'
 item: 'Bacon'
 stars: 4
-images: [taqueria_el_nava_main.jpg, taqueria_el_nava_package.jpg, taqueria_el_nava_bonus.jpg]
+imagePrimary: '../../images/taqueria_el_nava_main.jpg'
+imageLength: '../../images/taqueria_el_nava_bonus.jpg'
+imagePackage: '../../images/taqueria_el_nava_package.jpg'
 price: 13.00
 ---
 

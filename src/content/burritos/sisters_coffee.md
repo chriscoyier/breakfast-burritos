@@ -4,7 +4,9 @@ website: https://www.sisterscoffee.com/
 address: 273 W Hood Ave, Sisters, OR 97759
 item: Hoodoo
 stars: 5
-images: [sisters_coffee_primary.jpg, sisters_coffee_length.jpg, sisters_coffee_package.jpg]
+imagePrimary: '../../images/sisters_coffee_primary.jpg'
+imageLength: '../../images/sisters_coffee_length.jpg'
+imagePackage: '../../images/sisters_coffee_package.jpg'
 price: 12
 ---
 

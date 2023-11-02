@@ -4,7 +4,9 @@ website: https://dongabinos.com/
 address: '304 SE 3rd Street'
 item: 'Buenos Dias'
 stars: 5
-images: [don_gambinos_primary.jpg, don_gambinos_length.jpg, don_gambinos_package.jpg]
+imagePrimary: '../../images/don_gambinos_primary.jpg'
+imageLength: '../../images/don_gambinos_length.jpg'
+imagePackage: '../../images/don_gambinos_package.jpg'
 price: 7.25
 ---
 
