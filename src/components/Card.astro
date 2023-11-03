@@ -124,13 +124,14 @@ const priceOutput = formatter.format(price);
 		.card {
 			display: table-row;
 			width: 100%;
+			background: white;
 			> * {
 				display: table-cell;
-				border-bottom: 1px solid rgba(black, 0.2);
+				border-bottom: 3px solid black;
 			}
 
 			&:hover {
-				background: rgba(black, 0.05);
+				background: rgba(white, 0.9);
 			}
 
 			img {
@@ -142,7 +143,7 @@ const priceOutput = formatter.format(price);
 			}
 
 			.rating {
-				padding: 0 0 0 0.5rem;
+				padding: 0 0.5rem 0 0.5rem;
 				background: none;
 				text-align: right;
 			}
@@ -153,11 +154,11 @@ const priceOutput = formatter.format(price);
 			> * {
 				display: table-cell;
 				font-size: 1rem;
-				border-bottom: 1px solid rgba(black, 0.2);
+				border-bottom: 3px solid black;
 			}
 			h2 {
 				font-size: var(--font-size-lg);
-				padding: 0.5rem;
+				padding: 0.7rem;
 			}
 			address {
 				font-size: 0.8rem;
