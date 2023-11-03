@@ -23,13 +23,26 @@ for (let i = 0; i < 5 - stars; i++) {
 	black_stars += '☆';
 }
 
-let dollarUSLocale = Intl.NumberFormat('en-US', {
+// In case it's nicer to have $8 instead of $8.00
+
+// const fraction = new Intl.NumberFormat('en-US', {
+// 	style: 'currency',
+// 	currency: 'USD',
+// 	minimumFractionDigits: 0,
+// 	maximumFractionDigits: 0
+// });
+
+const formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
 	currency: 'USD',
-	useGrouping: true,
-	maximumSignificantDigits: 5
+	minimumFractionDigits: 2
 });
-const priceOutput = dollarUSLocale.format(price);
+
+// let priceOutput;
+// if (price % 1 == 0) priceOutput = fraction.format(price);
+// else priceOutput = formatter.format(price);
+
+const priceOutput = formatter.format(price);
 ---
 
 <div class="card-wrap">
@@ -79,7 +92,8 @@ const priceOutput = dollarUSLocale.format(price);
 <style lang="scss">
 	:global(body[data-format='grid']) {
 		.card {
-			box-shadow: var(--shadow-elevation-high);
+			background: white;
+			border: 3px solid black;
 			display: flex;
 			flex-direction: column;
 			border-radius: 20px 50px;
@@ -92,7 +106,7 @@ const priceOutput = dollarUSLocale.format(price);
 			}
 
 			.header {
-				background-color: hsl(var(--yellow) / 0.5);
+				background-color: #eee;
 				padding: 2rem;
 				address {
 					font-weight: 300;
@@ -154,14 +168,14 @@ const priceOutput = dollarUSLocale.format(price);
 	}
 
 	.rating {
-		background: hsl(var(--yellow) / 0.25);
+		background: black;
 		padding: 1rem 2rem;
 		display: flex;
 		align-items: center;
 		font-size: var(--font-size-lg);
 	}
 	.gold-stars {
-		color: #c89200;
+		color: #f3b611;
 	}
 	.black-stars {
 		color: #c89200;
@@ -180,34 +194,49 @@ const priceOutput = dollarUSLocale.format(price);
 
 		img:nth-child(1) {
 			grid-area: top;
+			aspect-ratio: unset;
 		}
 		img:nth-child(2) {
 			grid-area: b-l;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
 		}
 		img:nth-child(3) {
 			grid-area: b-r;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
 		}
 
 		&.state-2 {
 			img:nth-child(1) {
 				grid-area: b-r;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 			img:nth-child(2) {
 				grid-area: top;
+				aspect-ratio: unset;
 			}
 			img:nth-child(3) {
 				grid-area: b-l;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 		}
 		&.state-3 {
 			img:nth-child(1) {
 				grid-area: b-l;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 			img:nth-child(2) {
 				grid-area: b-r;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 			img:nth-child(3) {
 				grid-area: top;
+				aspect-ratio: unset;
 			}
 		}
 	}

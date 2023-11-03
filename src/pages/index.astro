@@ -7,6 +7,12 @@ import Card from '../components/Card.astro';
 
 let burritos = await getCollection('burritos');
 
+// Alpha sort
+// burritos.sort(function (a, b) {
+// 	var textA = a.data.restaurant.toUpperCase();
+// 	var textB = b.data.restaurant.toUpperCase();
+// 	return textA < textB ? -1 : textA > textB ? 1 : 0;
+// });
 burritos.sort((a, b) => a.data.stars - b.data.stars).reverse();
 ---
 
@@ -74,8 +80,10 @@ burritos.sort((a, b) => a.data.stars - b.data.stars).reverse();
 	}
 
 	footer {
-		padding: 100px 20px;
-		margin: 0 auto;
+		background: white;
+		border-radius: 100%;
+		padding: 40px 60px;
+		margin: 100px auto 100px;
 		text-align: center;
 		max-width: 600px;
 	}

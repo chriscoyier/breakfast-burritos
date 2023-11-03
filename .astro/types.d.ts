@@ -196,6 +196,13 @@ declare module 'astro:content' {
   collection: "burritos";
   data: InferEntrySchema<"burritos">
 } & { render(): Render[".md"] };
+"bodega_market.md": {
+	id: "bodega_market.md";
+  slug: "bodega_market";
+  body: string;
+  collection: "burritos";
+  data: InferEntrySchema<"burritos">
+} & { render(): Render[".md"] };
 "boneyard.md": {
 	id: "boneyard.md";
   slug: "boneyard";
@@ -329,8 +336,6 @@ declare module 'astro:content' {
   collection: "burritos";
   data: InferEntrySchema<"burritos">
 } & { render(): Render[".md"] };
-};
-"burritos-pending": {
 };
 
 	};
