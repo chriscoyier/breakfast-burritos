@@ -1,5 +1,5 @@
 ---
-const { restaurant, website, address, item, stars, images, price } = Astro.props;
+const { restaurant, website, address, item, stars, images, price, closed } = Astro.props;
 
 let gold_stars = '';
 for (let i = 0; i < stars; i++) {
@@ -32,7 +32,7 @@ let dollarUSLocale = Intl.NumberFormat('en-US', {
 const priceOutput = dollarUSLocale.format(price);
 ---
 
-<div class="card-wrap">
+<div class="card-wrap" data-closed={closed}>
 	<div class="card">
 		<header class="header">
 			<h2><a href={website}>{restaurant}</a></h2>
@@ -87,6 +87,39 @@ const priceOutput = dollarUSLocale.format(price);
 
 <style lang="scss">
 	:global(body[data-format='grid']) {
+		.card-wrap {
+			&[data-closed] {
+				opacity: 0.5;
+				position: relative;
+				overflow: clip;
+				&::after {
+					top: 10%;
+					left: 10%;
+					position: absolute;
+					background: oklch(61% 59% 28deg);
+					content: 'Closed';
+					width: 80%;
+					aspect-ratio: 1 / 1;
+					display: grid;
+					place-content: center;
+					color: white;
+					clip-path: polygon(
+						20% 0%,
+						0% 20%,
+						30% 50%,
+						0% 80%,
+						20% 100%,
+						50% 70%,
+						80% 100%,
+						100% 80%,
+						70% 50%,
+						100% 20%,
+						80% 0%,
+						50% 30%
+					);
+				}
+			}
+		}
 		.card {
 			box-shadow: var(--shadow-elevation-high);
 			display: flex;

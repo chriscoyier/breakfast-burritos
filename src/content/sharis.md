@@ -6,6 +6,7 @@ item: 'Original'
 stars: 5
 images: [sharis_primary.jpg, sharis_length.jpg, sharis_package.jpg]
 price: 14.99
+closed: true
 ---
 
 I was expecting this to be bad. I actually love Shari's in general so it's not that. I just figured it would be phoned in. They have hash browns, eggs, and sausage anyway, so why not just spatula them into a tortilla and flesh out the menu? But this has more care than that. There is a sauce on it that's uniquely for the burrito (best I can tell) that is quite good. Hash browns as the potatoes in the burrito is more rare than you'd think in Bend and it really works here, along with the chopped bacon that was cooked perfectly burrito usage. I'm a fan of getting sour cream and a kinda "normal" salsa automatically with burritos, and that's exactly what they do here.

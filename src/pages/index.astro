@@ -20,6 +20,7 @@ data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
 				images={post.frontmatter.images}
 				website={post.frontmatter.website}
 				price={post.frontmatter.price}
+				closed={post.frontmatter.closed}
 			>
 				<post.Content />
 			</Card>
