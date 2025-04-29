@@ -4,7 +4,9 @@ website: https://thatguys.com/bend-location
 address: 61147 Bend Parkway
 item: 'Breakfast Burrito'
 stars: 4
-images: [that_guys_1.jpg, that_guys_2.jpg, that_guys_3.webp]
+imagePrimary: '../../images/that_guys_1.jpg'
+imageLength: '../../images/that_guys_2.jpg'
+imagePackage: '../../images/that_guys_3.webp'
 price: 10.00
 ---
 

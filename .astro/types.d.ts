@@ -273,6 +273,13 @@ declare module 'astro:content' {
   collection: "burritos";
   data: InferEntrySchema<"burritos">
 } & { render(): Render[".md"] };
+"newport_market.md": {
+	id: "newport_market.md";
+  slug: "newport_market";
+  body: string;
+  collection: "burritos";
+  data: InferEntrySchema<"burritos">
+} & { render(): Render[".md"] };
 "rockin_daves.md": {
 	id: "rockin_daves.md";
   slug: "rockin_daves";
@@ -332,6 +339,13 @@ declare module 'astro:content' {
 "taqueria_el_nava.md": {
 	id: "taqueria_el_nava.md";
   slug: "taqueria_el_nava";
+  body: string;
+  collection: "burritos";
+  data: InferEntrySchema<"burritos">
+} & { render(): Render[".md"] };
+"that_guys_bistro.md": {
+	id: "that_guys_bistro.md";
+  slug: "that_guys_bistro";
   body: string;
   collection: "burritos";
   data: InferEntrySchema<"burritos">

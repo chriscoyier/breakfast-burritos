@@ -4,7 +4,9 @@ website: https://newportavemarket.com/
 address: '1121 NW Newport Avenue'
 item: 'Breakfast Burrito'
 stars: 2
-images: [newport_1.jpg, newport_2.jpg, newport_3.jpg]
+imagePrimary: '../../images/newport_1.jpg'
+imageLength: '../../images/newport_2.jpg'
+imagePackage: '../../images/newport_3.jpg'
 price: 8.00
 ---
 

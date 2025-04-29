@@ -12,7 +12,8 @@ const burritosCollection = defineCollection({
 			imagePrimary: image(),
 			imageLength: image(),
 			imagePackage: image(),
-			price: z.number()
+			price: z.number(),
+			closed: z.boolean().optional()
 		})
 });
 

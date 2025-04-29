@@ -1,7 +1,7 @@
 ---
 restaurant: 'Burrito Sunrise'
 website: https://www.facebook.com/BendBurrito/
-address: '67 NW Greenwood Ave, Bend OR 97701'
+address: '721 NE 3rd St'
 item: 'Supreme'
 stars: 4
 imagePrimary: '../../images/burrito_sunrise_supreme_primary.jpg'
@@ -9,6 +9,8 @@ imageLength: '../../images/burrito_sunrise_supreme_length.jpg'
 imagePackage: '../../images/burrito_sunrise_supreme_package.jpg'
 price: 10.00
 ---
+
+(Update: this review was from when that big yellow truck was over on Greenwood. It's now at Campfire Hotel on 3rd, so I updated the address.)
 
 My fourth time was a charm here. The Supreme Burrito was a damn fine take. Where Bend Breakfast Burrito kinda mixes all the burrito filling ingredients together making it homogenous (but great), Burrito Sunrise keeps all the ingredients very separate but layered. It's the difference between crafting/grilling the burritos on the spot (Burrito Sunrise), and making them well ahead of time (Bend Breakfast Burrito). I'm fond of them both, but I think it's fair to say a Burrito Sunrise has a higher peak-deliciousness point (one minute after they give it to you), and fades quickly, where Bend Breakfast Burrito remains delicious for hours/days. In other words, don't take your Burrito Sunrise burrito to the mountain.
 
