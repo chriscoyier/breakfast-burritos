@@ -1,5 +1,19 @@
 ---
-const { restaurant, website, address, item, stars, images, price, closed } = Astro.props;
+import { Image } from 'astro:assets';
+
+const {
+	restaurant,
+	website,
+	address,
+	item,
+	stars,
+	imagePrimary,
+	imageLength,
+	imagePackage,
+	price,
+	content,
+	closed
+} = Astro.props;
 
 let gold_stars = '';
 for (let i = 0; i < stars; i++) {
@@ -10,26 +24,26 @@ for (let i = 0; i < 5 - stars; i++) {
 	black_stars += '☆';
 }
 
-const PUBLIC_SITE = import.meta.env.PUBLIC_SITE;
+// In case it's nicer to have $8 instead of $8.00
 
-const LARGE = 1200;
-const MEDIUM = 800;
-const SMALL = 400;
+// const fraction = new Intl.NumberFormat('en-US', {
+// 	style: 'currency',
+// 	currency: 'USD',
+// 	minimumFractionDigits: 0,
+// 	maximumFractionDigits: 0
+// });
 
-const URL_PREFIX = `https://res.cloudinary.com/css-tricks/image/fetch/c_scale,f_auto,q_auto,w_`;
-
-const LARGE_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${LARGE}/` : '';
-const MEDIUM_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${MEDIUM}/` : '';
-const SMALL_URL = PUBLIC_SITE === 'true' ? `${URL_PREFIX}${SMALL}/` : '';
-const SITE_URL = PUBLIC_SITE === 'true' ? 'https://breakfast-burritos.chriscoyier.net' : '';
-
-let dollarUSLocale = Intl.NumberFormat('en-US', {
+const formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
 	currency: 'USD',
-	useGrouping: true,
-	maximumSignificantDigits: 5
+	minimumFractionDigits: 2
 });
-const priceOutput = dollarUSLocale.format(price);
+
+// let priceOutput;
+// if (price % 1 == 0) priceOutput = fraction.format(price);
+// else priceOutput = formatter.format(price);
+
+const priceOutput = formatter.format(price);
 ---
 
 <div class="card-wrap" data-closed={closed}>
@@ -46,41 +60,32 @@ const priceOutput = dollarUSLocale.format(price);
 		</div>
 
 		<div class="images state-1">
-			<img
-				alt="Photo of burrito insides"
+			<Image
+				alt="Photo of burrito's insides"
 				loading="lazy"
-				srcset={`
-			${LARGE_URL}${SITE_URL}/images/${images[0]} ${LARGE}w,
-			${MEDIUM_URL}${SITE_URL}/images/${images[0]} ${MEDIUM}w,
-			${SMALL_URL}${SITE_URL}/images/${images[0]} ${SMALL}w,
-			`}
-				sizes="(min-width: 700px) 50vw, 90vw"
+				src={imagePrimary}
+				width="672"
+				height="448"
 			/>
-			<img
-				alt="Photo of burrito length"
+			<Image
+				alt="Photo of the burrito's length"
 				loading="lazy"
-				srcset={`
-			${LARGE_URL}${SITE_URL}/images/${images[1]} ${LARGE}w,
-			${MEDIUM_URL}${SITE_URL}/images/${images[1]} ${MEDIUM}w,
-			${SMALL_URL}${SITE_URL}/images/${images[1]} ${SMALL}w,
-		`}
-				sizes="(min-width: 700px) 50vw, 90vw"
+				src={imageLength}
+				width="672"
+				height="448"
 			/>
-			<img
-				alt="Photo of burrito packaging"
+			<Image
+				alt="Photo of burrito's packaging"
 				loading="lazy"
-				srcset={`
-			${LARGE_URL}${SITE_URL}/images/${images[2]} ${LARGE}w,
-			${MEDIUM_URL}${SITE_URL}/images/${images[2]} ${MEDIUM}w,
-			${SMALL_URL}${SITE_URL}/images/${images[2]} ${SMALL}w,
-		`}
-				sizes="(min-width: 700px) 50vw, 90vw"
+				src={imagePackage}
+				width="672"
+				height="448"
 			/>
 		</div>
 
 		<div class="content">
 			<h3>Review</h3>
-			<slot />
+			{(<slot />)}
 		</div>
 	</div>
 </div>
@@ -121,7 +126,8 @@ const priceOutput = dollarUSLocale.format(price);
 			}
 		}
 		.card {
-			box-shadow: var(--shadow-elevation-high);
+			background: white;
+			border: 3px solid black;
 			display: flex;
 			flex-direction: column;
 			border-radius: 20px 50px;
@@ -129,11 +135,12 @@ const priceOutput = dollarUSLocale.format(price);
 
 			img {
 				max-width: 100%;
+				height: auto;
 				display: block;
 			}
 
 			.header {
-				background-color: hsl(var(--yellow) / 0.5);
+				background-color: #eee;
 				padding: 2rem;
 				address {
 					font-weight: 300;
@@ -151,9 +158,14 @@ const priceOutput = dollarUSLocale.format(price);
 		.card {
 			display: table-row;
 			width: 100%;
+			background: white;
 			> * {
 				display: table-cell;
-				border-bottom: 1px solid rgba(black, 0.2);
+				border-bottom: 3px solid black;
+			}
+
+			&:hover {
+				background: rgba(white, 0.9);
 			}
 
 			img {
@@ -165,21 +177,22 @@ const priceOutput = dollarUSLocale.format(price);
 			}
 
 			.rating {
-				padding: 0;
+				padding: 0 0.5rem 0 0.5rem;
 				background: none;
+				text-align: right;
 			}
 		}
 		.header {
-			display: contents;
+			display: contents !important;
 
 			> * {
 				display: table-cell;
 				font-size: 1rem;
-				border-bottom: 1px solid rgba(black, 0.2);
+				border-bottom: 3px solid black;
 			}
 			h2 {
 				font-size: var(--font-size-lg);
-				padding: 0.5rem 0;
+				padding: 0.7rem;
 			}
 			address {
 				font-size: 0.8rem;
@@ -190,14 +203,14 @@ const priceOutput = dollarUSLocale.format(price);
 	}
 
 	.rating {
-		background: hsl(var(--yellow) / 0.25);
+		background: black;
 		padding: 1rem 2rem;
 		display: flex;
 		align-items: center;
 		font-size: var(--font-size-lg);
 	}
 	.gold-stars {
-		color: #c89200;
+		color: #f3b611;
 	}
 	.black-stars {
 		color: #c89200;
@@ -216,34 +229,49 @@ const priceOutput = dollarUSLocale.format(price);
 
 		img:nth-child(1) {
 			grid-area: top;
+			aspect-ratio: unset;
 		}
 		img:nth-child(2) {
 			grid-area: b-l;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
 		}
 		img:nth-child(3) {
 			grid-area: b-r;
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
 		}
 
 		&.state-2 {
 			img:nth-child(1) {
 				grid-area: b-r;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 			img:nth-child(2) {
 				grid-area: top;
+				aspect-ratio: unset;
 			}
 			img:nth-child(3) {
 				grid-area: b-l;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 		}
 		&.state-3 {
 			img:nth-child(1) {
 				grid-area: b-l;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 			img:nth-child(2) {
 				grid-area: b-r;
+				aspect-ratio: 16 / 9;
+				object-fit: cover;
 			}
 			img:nth-child(3) {
 				grid-area: top;
+				aspect-ratio: unset;
 			}
 		}
 	}

@@ -4,12 +4,9 @@ website: http://losjalapenosbend.com/
 address: '601 NE Greenwood Ave'
 item: 'Machaca'
 stars: 5
-images:
-  [
-    losjalepenos_machaca_primary.jpg,
-    losjalepenos_machaca_length.jpg,
-    losjalepenos_machaca_package.jpg
-  ]
+imagePrimary: '../../images/losjalepenos_machaca_primary.jpg'
+imageLength: '../../images/losjalepenos_machaca_length.jpg'
+imagePackage: '../../images/losjalepenos_machaca_package.jpg'
 price: 9.95
 ---
 

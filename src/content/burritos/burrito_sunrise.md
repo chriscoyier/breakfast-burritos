@@ -4,12 +4,9 @@ website: https://www.facebook.com/BendBurrito/
 address: '67 NW Greenwood Ave, Bend OR 97701'
 item: 'Supreme'
 stars: 4
-images:
-  [
-    burrito_sunrise_supreme_primary.jpg,
-    burrito_sunrise_supreme_length.jpg,
-    burrito_sunrise_supreme_package.jpg
-  ]
+imagePrimary: '../../images/burrito_sunrise_supreme_primary.jpg'
+imageLength: '../../images/burrito_sunrise_supreme_length.jpg'
+imagePackage: '../../images/burrito_sunrise_supreme_package.jpg'
 price: 10.00
 ---
 

@@ -4,7 +4,9 @@ website: https://www.bk.com/menu/item-item_19146
 address: '1465 NE 3rd Street, Bend OR 97703'
 item: 'Egg-Normous'
 stars: 1
-images: [burger_king_primary.jpg, burger_king_length.jpg, burger_king_package.jpg]
+imagePrimary: '../../images/burger_king_primary.jpg'
+imageLength: '../../images/burger_king_length.jpg'
+imagePackage: '../../images/burger_king_package.jpg'
 price: 3.49
 ---
 

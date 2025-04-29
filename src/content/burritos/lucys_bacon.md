@@ -4,7 +4,9 @@ website: https://www.yelp.com/biz/lucys-taco-shop-bend
 address: '916 NE 3rd St, Bend OR 97701'
 item: 'Bacon'
 stars: 5
-images: [lucys_bacon_primary.jpg, lucys_bacon_length.jpg, lucys_bacon_package.jpg]
+imagePrimary: '../../images/lucys_bacon_primary.jpg'
+imageLength: '../../images/lucys_bacon_length.jpg'
+imagePackage: '../../images/lucys_bacon_package.jpg'
 price: 7.75
 ---
 

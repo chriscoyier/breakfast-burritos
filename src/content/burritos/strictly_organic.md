@@ -4,7 +4,9 @@ website: https://www.strictlyorganic.com/
 address: 6 SW Bond St, Bend, OR  97702
 item: Bacon
 stars: 3
-images: [strictly_organic_primary.jpg, strictly_organic_length.jpg, strictly_organic_package.jpg]
+imagePrimary: '../../images/strictly_organic_primary.jpg'
+imageLength: '../../images/strictly_organic_length.jpg'
+imagePackage: '../../images/strictly_organic_package.jpg'
 price: 12.50
 ---
 

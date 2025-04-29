@@ -1,30 +1,45 @@
 ---
+import { getCollection } from 'astro:content';
+
 import Layout from '../layout/layout.astro';
 import Toggle from '../components/Toggle.jsx';
 import Card from '../components/Card.astro';
-const data = await Astro.glob('../content/*.md');
 
-data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
+let burritos = await getCollection('burritos');
+
+// Alpha sort
+// burritos.sort(function (a, b) {
+// 	var textA = a.data.restaurant.toUpperCase();
+// 	var textB = b.data.restaurant.toUpperCase();
+// 	return textA < textB ? -1 : textA > textB ? 1 : 0;
+// });
+burritos.sort((a, b) => a.data.stars - b.data.stars).reverse();
 ---
 
 <Layout title="Breakfast Burritos in Bend, Reviewed.">
 	<Toggle client:visible />
 
 	<div class="grid">
-		{data.map((post) => (
-			<Card
-				restaurant={post.frontmatter.restaurant}
-				address={post.frontmatter.address}
-				item={post.frontmatter.item}
-				stars={post.frontmatter.stars}
-				images={post.frontmatter.images}
-				website={post.frontmatter.website}
-				price={post.frontmatter.price}
-				closed={post.frontmatter.closed}
-			>
-				<post.Content />
-			</Card>
-		))}
+		{burritos.map(async (post) => {
+			const { Content } = await post.render();
+			return (
+				<Card
+					restaurant={post.data.restaurant}
+					address={post.data.address}
+					item={post.data.item}
+					stars={post.data.stars}
+					imagePrimary={post.data.imagePrimary}
+					imageLength={post.data.imageLength}
+					imagePackage={post.data.imagePackage}
+					website={post.data.website}
+					price={post.data.price}
+					content={Content}
+					closed={post.data.closed}
+				>
+					<Content />
+				</Card>
+			);
+		})}
 	</div>
 
 	<footer>
@@ -38,9 +53,7 @@ data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
 		.grid {
 			padding: 0 4rem;
 			display: grid;
-			// grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
 			grid-template-columns: repeat(2, 1fr);
-			grid-template-rows: masonry;
 			gap: 4rem;
 			@media (max-width: 1000px) {
 				padding: 1rem;
@@ -68,8 +81,11 @@ data.sort((a, b) => a.frontmatter.stars - b.frontmatter.stars).reverse();
 	}
 
 	footer {
-		padding: 100px 20px;
-		margin: 0 auto;
+		background: white;
+		border-radius: 100%;
+		border: 3px solid black;
+		padding: 40px 60px;
+		margin: 100px auto 100px;
 		text-align: center;
 		max-width: 600px;
 	}

@@ -4,7 +4,9 @@ website: http://lifeandtime.com/
 address: '320 SW Century Drive, Bend OR 97703'
 item: 'Traditional'
 stars: 3
-images: [life_and_time_primary.jpg, life_and_time_length.jpg, life_and_time_package.jpg]
+imagePrimary: '../../images/life_and_time_primary.jpg'
+imageLength: '../../images/life_and_time_length.jpg'
+imagePackage: '../../images/life_and_time_package.jpg'
 price: 7.50
 ---
 

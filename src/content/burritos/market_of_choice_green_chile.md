@@ -4,12 +4,9 @@ website: https://www.marketofchoice.com/locations-bend/
 address: '115 NW Sisemore St, Bend Oregon 97701'
 item: 'Green Chile'
 stars: 5
-images:
-  [
-    market_of_choice_green_chile_primary.jpg,
-    market_of_choice_green_chile_length.jpg,
-    market_of_choice_green_chile_package.jpg
-  ]
+imagePrimary: '../../images/market_of_choice_green_chile_primary.jpg'
+imageLength: '../../images/market_of_choice_green_chile_length.jpg'
+imagePackage: '../../images/market_of_choice_green_chile_package.jpg'
 price: 6.99
 ---
 

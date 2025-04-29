@@ -4,7 +4,9 @@ website: https://www.hideawaytavernbend.com/
 address: '939 SE 2nd St'
 item: "Farmer's"
 stars: 4
-images: [hideaway_1.jpg, hideaway_2.jpg, hideaway_3.jpg]
+imagePrimary: '../../images/hideaway_1.jpg'
+imageLength: '../../images/hideaway_2.jpg'
+imagePackage: '../../images/hideaway_3.jpg'
 price: 17.00
 ---
 

@@ -4,7 +4,9 @@ website: http://rockindaves.com/
 address: '661 NE Greenwood Ave'
 item: 'Spikoli'
 stars: 4
-images: [rockin_daves_primary.jpg, rockin_daves_length.jpg, rockin_daves_package.jpg]
+imagePrimary: '../../images/rockin_daves_primary.jpg'
+imageLength: '../../images/rockin_daves_length.jpg'
+imagePackage: '../../images/rockin_daves_package.jpg'
 price: 13.00
 closed: true
 ---
