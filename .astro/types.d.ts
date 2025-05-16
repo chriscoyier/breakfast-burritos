@@ -350,6 +350,13 @@ declare module 'astro:content' {
   collection: "burritos";
   data: InferEntrySchema<"burritos">
 } & { render(): Render[".md"] };
+"washington.md": {
+	id: "washington.md";
+  slug: "washington";
+  body: string;
+  collection: "burritos";
+  data: InferEntrySchema<"burritos">
+} & { render(): Render[".md"] };
 };
 
 	};
