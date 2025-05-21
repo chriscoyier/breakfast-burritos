@@ -13,71 +13,40 @@ import '../styles/global.scss';
 			href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌯</text></svg>"
 		/>
 		<meta name="theme-color" content="#18083c" />
-		<meta name="monetization" content="$ilp.uphold.com/biyqg2MkQKbe" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&family=Quicksand:wght@500&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 
 	<body data-format="grid">
 		<div class="root">
-			<div class="logo">Breakfast Burritos in Bend, Reviewed.</div>
+			<h1 class="logo">
+				BREAKFAST BURRITOS
+				<span>in Bend, Oregon</span>
+			</h1>
 			<main><slot /></main>
 		</div>
 
 		<style lang="scss">
 			.logo {
-				background-image: url(/images/logo.svg);
-				background-repeat: no-repeat;
-				background-size: 300px;
-				height: 200px;
-				background-blend-mode: darken;
-				text-indent: -9999px;
-				overflow: hidden;
-				filter: brightness(60%) drop-shadow(1px 1px 0 rgba(0, 0, 0, 1));
+				text-align: center;
+				padding: 4rem 1rem;
+				font-size: var(--font-size-xxxl);
+				line-height: 1;
+				span {
+					display: block;
+					font-size: var(--font-size-xl);
+				}
 			}
 		</style>
 
 		<script>
-			import gsap from 'gsap';
-			import Flip from 'gsap/Flip';
-
-			gsap.registerPlugin(Flip);
-
-			function doFlip(el) {
-				const imageParent = el.target.closest('.images');
-				const allImages = imageParent.querySelectorAll('img');
-				const state = Flip.getState(allImages);
-
-				// stop the parent from collapsing
-				// while the children are absolutely positioned.
-				imageParent.style.height = `${imageParent.offsetHeight}px`;
-
-				// Make DOM or styling changes
-				if (imageParent.classList.contains('state-1')) {
-					imageParent.classList.remove('state-1');
-					imageParent.classList.add('state-2');
-				} else if (imageParent.classList.contains('state-2')) {
-					imageParent.classList.remove('state-2');
-					imageParent.classList.add('state-3');
-				} else {
-					imageParent.classList.remove('state-3');
-					imageParent.classList.add('state-1');
-				}
-
-				Flip.from(state, {
-					duration: 1.2,
-					ease: 'power1.inOut',
-					absolute: true, // take the images out of the document flow during flip
-					onComplete: () => {
-						imageParent.style.height = 'unset'; // reset container height
-					}
-				});
-
-				// Alternate?
-				// https://twitter.com/greensock/status/1472464227633872896
-			}
-
 			const allImageZones = document.querySelectorAll('.images');
 			allImageZones.forEach((zone) => {
-				zone.addEventListener('click', doFlip);
+				// view transition
 			});
 		</script>
 	</body>

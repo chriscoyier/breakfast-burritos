@@ -24,24 +24,11 @@ for (let i = 0; i < 5 - stars; i++) {
 	black_stars += '☆';
 }
 
-// In case it's nicer to have $8 instead of $8.00
-
-// const fraction = new Intl.NumberFormat('en-US', {
-// 	style: 'currency',
-// 	currency: 'USD',
-// 	minimumFractionDigits: 0,
-// 	maximumFractionDigits: 0
-// });
-
 const formatter = new Intl.NumberFormat('en-US', {
 	style: 'currency',
 	currency: 'USD',
 	minimumFractionDigits: 2
 });
-
-// let priceOutput;
-// if (price % 1 == 0) priceOutput = fraction.format(price);
-// else priceOutput = formatter.format(price);
 
 const priceOutput = formatter.format(price);
 ---
@@ -84,7 +71,6 @@ const priceOutput = formatter.format(price);
 		</div>
 
 		<div class="content">
-			<h3>Review</h3>
 			{(<slot />)}
 		</div>
 	</div>
@@ -154,15 +140,16 @@ const priceOutput = formatter.format(price);
 	:global(body[data-format='table']) {
 		.card-wrap {
 			display: contents;
+			&[data-closed] > * {
+				text-decoration: line-through;
+			}
 		}
 		.card {
-			display: table-row;
-			width: 100%;
+			display: grid;
+			grid-template-columns: 170px 1fr 1fr 1fr;
+			gap: 1rem;
+			align-items: center;
 			background: white;
-			> * {
-				display: table-cell;
-				border-bottom: 3px solid black;
-			}
 
 			&:hover {
 				background: rgba(white, 0.9);
@@ -182,14 +169,21 @@ const priceOutput = formatter.format(price);
 				text-align: right;
 			}
 		}
+
+		.rating {
+			order: -1;
+		}
 		.header {
 			display: contents !important;
 
 			> * {
-				display: table-cell;
 				font-size: 1rem;
-				border-bottom: 3px solid black;
 			}
+
+			.item-name {
+				margin: 0;
+			}
+
 			h2 {
 				font-size: var(--font-size-lg);
 				padding: 0.7rem;
