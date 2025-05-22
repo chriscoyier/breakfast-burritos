@@ -121,7 +121,7 @@ const priceOutput = formatter.format(price);
 			border: 3px solid black;
 			display: flex;
 			flex-direction: column;
-			border-radius: 20px 50px;
+			border-radius: 20px;
 			overflow: hidden;
 
 			img {
@@ -131,7 +131,7 @@ const priceOutput = formatter.format(price);
 			}
 
 			.header {
-				background-color: #eee;
+				background-color: #ffe398;
 				padding: 2rem;
 				address {
 					font-weight: 300;
@@ -157,7 +157,10 @@ const priceOutput = formatter.format(price);
 			background: white;
 
 			&:hover {
-				background: rgba(white, 0.9);
+				background: rgba(black, 0.1);
+				.gold-stars {
+					color: white;
+				}
 			}
 
 			img {
@@ -230,6 +233,7 @@ const priceOutput = formatter.format(price);
 		img {
 			aspect-ratio: 16 / 9;
 			object-fit: cover;
+			border-radius: 8px;
 		}
 
 		img:nth-child(1) {
@@ -289,7 +293,6 @@ const priceOutput = formatter.format(price);
 				display: grid;
 				grid-template-columns: 1fr 2fr;
 				grid-template-rows: min-content min-content 1fr;
-				border-top-right-radius: 0;
 				height: 100%;
 			}
 			.header.header {
@@ -297,7 +300,7 @@ const priceOutput = formatter.format(price);
 				grid-row: 1 / 2;
 				border-top: 1rem solid white;
 				border-left: 1rem solid white;
-				border-top-left-radius: 2rem;
+				border-top-left-radius: 28px;
 			}
 			.rating.rating {
 				grid-column: 1 / -1;
