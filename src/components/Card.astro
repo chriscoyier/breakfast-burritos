@@ -11,7 +11,6 @@ const {
 	imageLength,
 	imagePackage,
 	price,
-	content,
 	closed
 } = Astro.props;
 
@@ -53,6 +52,7 @@ const priceOutput = formatter.format(price);
 				src={imagePrimary}
 				width="672"
 				height="448"
+				style={`view-transition-name:image-1-${restaurant.replace(/\s+/g, '')}`}
 			/>
 			<Image
 				alt="Photo of the burrito's length"
@@ -60,6 +60,7 @@ const priceOutput = formatter.format(price);
 				src={imageLength}
 				width="672"
 				height="448"
+				style={`view-transition-name:image-2-${restaurant.replace(/\s+/g, '')}`}
 			/>
 			<Image
 				alt="Photo of burrito's packaging"
@@ -67,6 +68,7 @@ const priceOutput = formatter.format(price);
 				src={imagePackage}
 				width="672"
 				height="448"
+				style={`view-transition-name:image-3-${restaurant.replace(/\s+/g, '')}`}
 			/>
 		</div>
 
@@ -215,6 +217,7 @@ const priceOutput = formatter.format(price);
 	}
 
 	.images {
+		cursor: pointer;
 		background: white;
 		position: relative;
 		padding: 1rem;
@@ -224,51 +227,41 @@ const priceOutput = formatter.format(price);
 			'top top'
 			'b-l b-r';
 
+		img {
+			aspect-ratio: 16 / 9;
+			object-fit: cover;
+		}
+
 		img:nth-child(1) {
 			grid-area: top;
-			aspect-ratio: unset;
 		}
 		img:nth-child(2) {
 			grid-area: b-l;
-			aspect-ratio: 16 / 9;
-			object-fit: cover;
 		}
 		img:nth-child(3) {
 			grid-area: b-r;
-			aspect-ratio: 16 / 9;
-			object-fit: cover;
 		}
 
 		&.state-2 {
 			img:nth-child(1) {
 				grid-area: b-r;
-				aspect-ratio: 16 / 9;
-				object-fit: cover;
 			}
 			img:nth-child(2) {
 				grid-area: top;
-				aspect-ratio: unset;
 			}
 			img:nth-child(3) {
 				grid-area: b-l;
-				aspect-ratio: 16 / 9;
-				object-fit: cover;
 			}
 		}
 		&.state-3 {
 			img:nth-child(1) {
 				grid-area: b-l;
-				aspect-ratio: 16 / 9;
-				object-fit: cover;
 			}
 			img:nth-child(2) {
 				grid-area: b-r;
-				aspect-ratio: 16 / 9;
-				object-fit: cover;
 			}
 			img:nth-child(3) {
 				grid-area: top;
-				aspect-ratio: unset;
 			}
 		}
 	}

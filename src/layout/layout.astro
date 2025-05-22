@@ -44,9 +44,27 @@ import '../styles/global.scss';
 		</style>
 
 		<script>
+			function doFlip(el) {
+				document.startViewTransition(() => {
+					const imageParent = el.target.closest('.images');
+
+					// Make DOM or styling changes
+					if (imageParent.classList.contains('state-1')) {
+						imageParent.classList.remove('state-1');
+						imageParent.classList.add('state-2');
+					} else if (imageParent.classList.contains('state-2')) {
+						imageParent.classList.remove('state-2');
+						imageParent.classList.add('state-3');
+					} else {
+						imageParent.classList.remove('state-3');
+						imageParent.classList.add('state-1');
+					}
+				});
+			}
+
 			const allImageZones = document.querySelectorAll('.images');
 			allImageZones.forEach((zone) => {
-				// view transition
+				zone.addEventListener('click', doFlip);
 			});
 		</script>
 	</body>
