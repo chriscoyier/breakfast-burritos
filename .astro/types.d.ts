@@ -182,6 +182,13 @@ declare module 'astro:content' {
   collection: "burritos";
   data: InferEntrySchema<"burritos">
 } & { render(): Render[".md"] };
+"axel.md": {
+	id: "axel.md";
+  slug: "axel";
+  body: string;
+  collection: "burritos";
+  data: InferEntrySchema<"burritos">
+} & { render(): Render[".md"] };
 "bend_breakfast_burrito.md": {
 	id: "bend_breakfast_burrito.md";
   slug: "bend_breakfast_burrito";
@@ -241,6 +248,13 @@ declare module 'astro:content' {
 "hideaway.md": {
 	id: "hideaway.md";
   slug: "hideaway";
+  body: string;
+  collection: "burritos";
+  data: InferEntrySchema<"burritos">
+} & { render(): Render[".md"] };
+"hooch.md": {
+	id: "hooch.md";
+  slug: "hooch";
   body: string;
   collection: "burritos";
   data: InferEntrySchema<"burritos">
